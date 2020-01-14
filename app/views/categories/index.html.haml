@@ -1,7 +1,14 @@
 カテゴリー　一覧
+
+= link_to "予算の登録", new_budget_path
+-# = link_to "予算の編集", edit_budget_parh(@budget.id)
+
 = link_to "新規カテゴリーの登録", new_category_path
-= link_to "カテゴリーの編集", "categories/#{params[:id]}/edit"
+-# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
 
 = link_to "postの登録", new_post_path
-= link_to "postの編集", "posts/#{params[:id]}/edit"
+-# = link_to "postの編集", edit_post_parh(@post.id)
+
+= link_to "タグの登録", new_tag_path
+-# = link_to "タグの編集", edit_post_parh(@tag.id)
 

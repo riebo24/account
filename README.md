@@ -27,18 +27,38 @@ Things you may want to cover:
 
 # README
 
-#家計簿アプリ　データベース設計
+#家計簿アプリ データベース設計
+
+## budgetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|price|integer|null: false|
+|start_on|date|null: false|
+|end_on|date|null: false|
+### Association
+- has_one :categoly
+
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :posts
+- belongs_to :budgets
+
+
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |price|integer|null: false|
 ### Association
-- has_many :tags, though: :posts_tags
+- has_many :tags, through: :posts_tags
 - has_many :posts_tags
 - belongs_to :categoly
 
 
-##　tagsテーブル
+## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -57,22 +77,15 @@ Things you may want to cover:
 - belongs_to :tags
 
 
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :posts
-- bolongs_to :budgets
 
 
-## budgetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|price|integer|null: false|
-|start_on|date|null: false|
-|end_on|date|null: false|
-### Association
-- has_many :posts, though: :posts_tags
-- has_many :posts_tags
-- has_on :categoly
+
+
+
+
+
+
+
+
+
+
