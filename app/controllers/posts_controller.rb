@@ -4,12 +4,18 @@ class PostsController < ApplicationController
   end
 
   def new
-    
-  end
+    @post = Post.new   
+
+    end
 
 
   def create
-    
+    @post = Post.new(set_post)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 
@@ -21,4 +27,9 @@ class PostsController < ApplicationController
     
   end
 
+  private
+
+    def set_post
+      params.require(:post).permit(:price, :memo)
+    end
 end

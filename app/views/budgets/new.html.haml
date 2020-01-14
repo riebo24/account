@@ -1,0 +1,7 @@
+= form_for @budget do |f|
+  = f.label :price
+  = f.number_field :price
+  = f.label :期間を選択
+  = f.date_select :start_at
+  = f.date_select :finish_at
+  = f.submit "新規作成"
