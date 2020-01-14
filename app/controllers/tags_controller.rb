@@ -4,9 +4,8 @@ class TagsController < ApplicationController
   end
 
   def new
-    @tags = Tags.new   
-
-    end
+    @tag = Tag.new
+  end
 
 
   def create
