@@ -22,3 +22,57 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+# README
+
+#家計簿アプリ　データベース設計
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|price|integer|null: false|
+### Association
+- has_many :tags, though: :posts_tags
+- has_many :posts_tags
+- belongs_to :categoly
+
+
+##　tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :posts, though: :posts_tags
+- has_many :posts_tags
+
+
+## posts_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_id|reference|null: false, foreign_key: true|
+|tag_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :posts
+- belongs_to :tags
+
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :posts
+- bolongs_to :budgets
+
+
+## budgetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|price|integer|null: false|
+|start_on|date|null: false|
+|end_on|date|null: false|
+### Association
+- has_many :posts, though: :posts_tags
+- has_many :posts_tags
+- has_on :categoly

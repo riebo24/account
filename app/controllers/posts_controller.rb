@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new   
-  end
+
+    end
 
 
   def create
@@ -31,5 +32,4 @@ class PostsController < ApplicationController
     def set_post
       params.require(:post).permit(:price, :memo)
     end
-
 end
