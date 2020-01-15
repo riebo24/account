@@ -3,5 +3,5 @@ class Category < ApplicationRecord
 
   has_many :posts
   belongs_to :budgets
-  
+  belongs_to :user
 end

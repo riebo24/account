@@ -4,5 +4,5 @@ class Budget < ApplicationRecord
   validates :finish_at, presence: true
 
   has_one :categoly
-
+  belongs_to :user
 end

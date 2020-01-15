@@ -8,11 +8,18 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    # binding.pry
+
     @category = Category.new(set_category)
+    @category[:budget_id] = 1
+    @category[:user_id] = 1
+    binding.pry
+
     if @category.save
+
       redirect_to root_path
+
     else
+
       render :new
     end
   end
@@ -29,6 +36,7 @@ class CategoriesController < ApplicationController
 
   private
     def set_category
+
       params.require(:category).permit(:name)
     end
 end
