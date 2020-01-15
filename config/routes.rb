@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "categories#index"
+  devise_for :users do
+  resources :budgets
   resources :categories
   resources :posts
   resources :tags
-  resources :budgets
+
+
+  root "categories#index"
 
 end

@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 
   has_many :tags, through: :posts_tags
   has_many :posts_tags
-  belongs_to :categoly
-  belongs_to :user
+  belongs_to :categoly, optional: true
+  belongs_to :user, optional: true
 
 end
