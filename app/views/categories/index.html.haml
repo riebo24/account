@@ -2,6 +2,12 @@
 %br
 %br
 
+ログイン中のユーザー
+=current_user.name
+%br
+%br
+
+
 = link_to "予算の登録", new_budget_path
 -# = link_to "予算の編集", edit_budget_parh(@budget.id)
 %br
@@ -24,3 +30,5 @@
 
 = link_to "ユーザーの新規登録", new_user_registration_path
 = link_to "ユーザーの編集", edit_user_registration_path(current_user)
+
+
