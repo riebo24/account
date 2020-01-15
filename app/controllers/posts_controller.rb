@@ -6,18 +6,30 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new   
+  end
 
-    end
+
+  # def create
+  #   @post = Post.new(set_post)
+ 
+  #   if @post.save
+  #     redirect_to root_path
+  #   else
+  #     # binding.pry   
+  #     render :new
+  #   end
+  # end
 
 
   def create
     @post = Post.new(set_post)
-    if @post.save
+    if @post.save 
       redirect_to root_path
     else
+
       render :new
     end
-  end
+   end
 
 
   def edit
@@ -31,6 +43,8 @@ class PostsController < ApplicationController
   private
 
     def set_post
+      binding.pry
       params.require(:post).permit(:price, :memo)
     end
+
 end
