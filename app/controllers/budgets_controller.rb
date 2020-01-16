@@ -1,6 +1,8 @@
 class BudgetsController < ApplicationController
+  # 開始日が終了日より後でも登録可になっているので、改善したい。 
+
   def index
-    
+    @budgets = Budget.all
   end
 
   def new
@@ -12,17 +14,26 @@ class BudgetsController < ApplicationController
   def create
     @budget = Budget.new(set_budget)
     if @budget.save
-      redirect_to root_path
+      redirect_to budgets_path
     else
       render :new
     end
   end
 
   def edit
-    
+    @budget = Budget.find(params[:id])   
   end
 
   def update
+    @budget = Budget.find(params[:id])   
+    @budget.update(set_budget)
+    redirect_to budgets_path
+  end
+
+  def destroy
+    @budget = Budget.find(params[:id])
+    @budget.destroy
+    redirect_to budgets_path
     
   end
 

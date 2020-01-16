@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :tags
 
 
-  root "categories#index"
+  root "tops#index"
 
 end
