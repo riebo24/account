@@ -1,0 +1,11 @@
+= form_for @monthly do |f|
+  = f.label :price
+  = f.number_field :price
+  %br
+  = f.label :start_at
+  = f.date_select :start_at
+  %br
+  = f.label :finish_at
+  = f.date_select :finish_at
+  %br
+  = f.submit "新規作成"

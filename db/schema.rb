@@ -10,26 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115043437) do
+ActiveRecord::Schema.define(version: 20200117064947) do
 
   create_table "budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "price"
-    t.date     "start_at"
-    t.date     "finish_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "monthly_id"
+    t.index ["monthly_id"], name: "index_budgets_on_monthly_id", using: :btree
     t.index ["user_id"], name: "index_budgets_on_user_id", using: :btree
+  end
+
+  create_table "budgets_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "budget_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["budget_id"], name: "index_budgets_categories_on_budget_id", using: :btree
+    t.index ["category_id"], name: "index_budgets_categories_on_category_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "budget_id"
     t.integer  "user_id"
-    t.index ["budget_id"], name: "index_categories_on_budget_id", using: :btree
     t.index ["user_id"], name: "index_categories_on_user_id", using: :btree
+  end
+
+  create_table "monthlies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "price"
+    t.date     "start_at"
+    t.date     "finish_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "monthly_budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "price"
+    t.date     "start_at"
+    t.date     "finish_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "post_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,8 +94,8 @@ ActiveRecord::Schema.define(version: 20200115043437) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "budgets", "monthlies"
   add_foreign_key "budgets", "users"
-  add_foreign_key "categories", "budgets"
   add_foreign_key "categories", "users"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"

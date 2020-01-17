@@ -10,8 +10,7 @@ class CategoriesController < ApplicationController
   def create
 
     @category = Category.new(set_category)
-    @category[:budget_id] = 1
-    @category[:user_id] = 1
+
     if @category.save
       redirect_to root_path
     else
