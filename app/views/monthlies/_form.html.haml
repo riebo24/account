@@ -8,6 +8,7 @@
   = f.label :finish_at, '終了日'
   = f.date_select :finish_at
   %br
+
   = f.fields_for :budgets do |b|
     = b.label :price, 'カテゴリー予算'
     = b.number_field :price
