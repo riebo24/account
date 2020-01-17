@@ -5,6 +5,7 @@ class MonthliesController < ApplicationController
 
   def new
     @monthly = Monthly.new   
+    @monthly.budgets.build
   end
 
   def create
@@ -14,7 +15,7 @@ class MonthliesController < ApplicationController
     else
       render :new
     end
-   end
+  end
 
 
   def edit
@@ -37,6 +38,6 @@ class MonthliesController < ApplicationController
   private
 
     def set_monthly
-      params.require(:monthly).permit(:price, :start_at, :finish_at).merge(user_id: current_user.id)
+      params.require(:monthly).permit(:price, :start_at, :finish_at, budgets_attributes:[:id, :price]).merge(user_id: current_user.id)
     end
 end
