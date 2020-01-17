@@ -1,11 +1,15 @@
 = form_for @monthly do |f|
-  = f.label :price
+  = f.label :price, '月予算'
   = f.number_field :price
   %br
-  = f.label :start_at
+  = f.label :start_at, '開始日'
   = f.date_select :start_at
   %br
-  = f.label :finish_at
+  = f.label :finish_at, '終了日'
   = f.date_select :finish_at
+  %br
+  = f.fields_for :budgets do |b|
+    = b.label :price, 'カテゴリー予算'
+    = b.number_field :price
   %br
   = f.submit "新規作成"
