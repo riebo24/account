@@ -1,3 +1,0 @@
-class MonthlyBudget < ApplicationRecord
-
-end

@@ -29,7 +29,7 @@ class BudgetsController < ApplicationController
   end
 
   def edit
-    @budget = Budget.find(params[:id])   
+    @budget = Budget.find(params[:id]).merge(user_id: current_user.id) 
   end
 
   def update
@@ -48,7 +48,9 @@ class BudgetsController < ApplicationController
   private
     
     def set_budget
-      params.require(:budget).permit(:price, :start_at, :finish_at, category_ids: [])
+
+      params.require(:budget).permit(:price, category_ids: []).merge(user_id: current_user.id)
+
     end
 
     # def set_category

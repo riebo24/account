@@ -1,7 +1,7 @@
 .budget
   = converting_to_jpy(budget.price)
-  = budget.start_at
-  = budget.finish_at
+  = budget.user
+  = budget.monthly
   = link_to "編集", edit_budget_path(budget)
   = link_to "削除", budget_path(budget), method: :delete
 

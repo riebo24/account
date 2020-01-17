@@ -36,6 +36,6 @@ class CategoriesController < ApplicationController
 
   private
     def set_category
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name).merge(user_id: current_user.id)
     end
 end

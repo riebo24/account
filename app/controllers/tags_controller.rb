@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(set_tag)
     if @tag.save
-      redirect_to root_path
+      redirect_to tags_path
     else
       render :new
     end
@@ -36,6 +36,6 @@ class TagsController < ApplicationController
   private
 
     def set_tag
-      params.require(:tag).permit(:name)
+      params.require(:tag).permit(:name).merge(user_id: current_user.id)
     end                                                                                                    
 end

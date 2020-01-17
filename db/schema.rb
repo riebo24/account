@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200117064947) do
+ActiveRecord::Schema.define(version: 20200117074201) do
 
   create_table "budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "price"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20200117064947) do
     t.date     "finish_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_monthlies_on_user_id", using: :btree
   end
 
   create_table "monthly_budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 20200117064947) do
   add_foreign_key "budgets", "monthlies"
   add_foreign_key "budgets", "users"
   add_foreign_key "categories", "users"
+  add_foreign_key "monthlies", "users"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "users"

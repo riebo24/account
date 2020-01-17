@@ -3,4 +3,5 @@ class Monthly < ApplicationRecord
   validates :start_at, presence: true
   validates :finish_at, presence: true
   has_many :bubgets
+  belongs_to :user
 end
