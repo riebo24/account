@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts
   resources :tags
-
+  resources :monthlies
 
   root "tops#index"
 

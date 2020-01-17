@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :categories
   has_many :posts
   has_many :tags  
+  has_many :monthlies
 end
