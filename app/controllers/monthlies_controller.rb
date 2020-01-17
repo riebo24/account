@@ -4,8 +4,9 @@ class MonthliesController < ApplicationController
   end
 
   def new
-    @monthly = Monthly.new   
+    @monthly = Monthly.new
     @monthly.budgets.build
+
   end
 
   def create
