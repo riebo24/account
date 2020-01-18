@@ -11,6 +11,7 @@ class MonthliesController < ApplicationController
 
   def create
     @monthly = Monthly.new(set_monthly)
+    binding.pry
     if @monthly.save 
       redirect_to monthlies_path
     else
@@ -37,7 +38,6 @@ class MonthliesController < ApplicationController
   end
 
   private
-
     def set_monthly
       params.require(:monthly).permit(:price, :start_at, :finish_at, budgets_attributes:[:id, :price]).merge(user_id: current_user.id)
     end
