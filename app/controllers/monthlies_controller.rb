@@ -11,18 +11,13 @@ class MonthliesController < ApplicationController
   end
 
   def new
-<<<<<<< Updated upstream
-    @monthly = Monthly.new   
-    @budget = @monthly.budgets.build
-=======
     @monthly = Monthly.new
     @monthly.budgets.new
-
->>>>>>> Stashed changes
   end
 
   def create
     @monthly = Monthly.new(set_monthly)
+    binding.pry
     if @monthly.save 
       redirect_to monthlies_path
     else
@@ -48,14 +43,8 @@ class MonthliesController < ApplicationController
   end
 
   private
-
     def set_monthly
-<<<<<<< Updated upstream
-      # binding.pry
-      params.require(:monthly).permit(:price, :start_at, :finish_at, address_attributes:[:id, :price]).merge(user_id: current_user.id)
-=======
       params.require(:monthly).permit(:start_at, :finish_at, budgets_attributes:[:id, :price, :category_id]).merge(user_id: current_user.id)
->>>>>>> Stashed changes
     end
 
     # def set_post

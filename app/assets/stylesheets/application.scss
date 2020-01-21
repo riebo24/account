@@ -2,12 +2,10 @@
 @import "./categories";
 @import "./posts";
 @import "./tags";
-<<<<<<< Updated upstream
-@import "./user";
-=======
 @import "./user";
 @import "./reset";
 @import "monthlies";
+
 *{
   box-sizing: border-box;
 }
@@ -43,5 +41,5 @@ header{
       margin: 10px;}
 
   }
+
 }
->>>>>>> Stashed changes

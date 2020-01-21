@@ -15,21 +15,10 @@ class BudgetsController < ApplicationController
     @budget = Budget.new  
     @monthly = Category.find(2) 
 
-<<<<<<< Updated upstream
-    end
-=======
-  end
-
-  def new_monthly
-
-    
-  end
->>>>>>> Stashed changes
-
 
   def create
     @budget = Budget.new(set_budget)
-    # binding.pry
+    binding.pry
     if @budget.save
       redirect_to budgets_path
     else
