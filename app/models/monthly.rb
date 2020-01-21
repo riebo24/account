@@ -1,5 +1,4 @@
 class Monthly < ApplicationRecord
-  validates :price, presence: true
   validates :start_at, presence: true
   validates :finish_at, presence: true
   validate   :finish_cannot_be_before_start

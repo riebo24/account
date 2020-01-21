@@ -16,6 +16,7 @@ class MonthliesController < ApplicationController
   end
 
   def create
+
     @monthly = Monthly.new(set_monthly)
     binding.pry
     if @monthly.save 
@@ -46,9 +47,5 @@ class MonthliesController < ApplicationController
     def set_monthly
       params.require(:monthly).permit(:start_at, :finish_at, budgets_attributes:[:id, :price, :category_id]).merge(user_id: current_user.id)
     end
-
-    # def set_post
-
-    # end
 
 end

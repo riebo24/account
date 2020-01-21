@@ -13,12 +13,13 @@ class BudgetsController < ApplicationController
   
   def new
     @budget = Budget.new  
-    @monthly = Category.find(2) 
+    # @monthly = Category.find(5) 
+  end
 
 
   def create
     @budget = Budget.new(set_budget)
-    binding.pry
+    # binding.pry
     if @budget.save
       redirect_to budgets_path
     else
