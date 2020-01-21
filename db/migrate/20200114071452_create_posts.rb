@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.integer :price
       t.string :memo
-      t.references :categoly, foreign_key: true
+      t.references :category, foreign_key: true
       t.timestamps
     end
   end

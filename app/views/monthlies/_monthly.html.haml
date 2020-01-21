@@ -1,6 +1,11 @@
 .monthly
-  = monthly.price
-  = monthly.start_at
-  = monthly.finish_at
+  %br
+  期間
+
+  = set_year(monthly.start_at)
+  〜
+  = set_date(monthly.finish_at)
+  %br
+  = link_to "詳細", monthly_path(monthly)
   = link_to "編集", edit_monthly_path(monthly)
   = link_to "削除", monthly_path(monthly), method: :delete

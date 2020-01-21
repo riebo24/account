@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(set_post)
+    binding.pry
     if @post.save 
       redirect_to posts_path
     else
@@ -37,6 +38,6 @@ class PostsController < ApplicationController
   private
 
     def set_post
-      params.require(:post).permit(:price, :memo).merge(user_id: current_user.id)
+      params.require(:post).permit(:price, :memo, :date, :category_id, tag_ids:[]).merge(user_id: current_user.id)
     end
 end

@@ -3,10 +3,9 @@
   = f.number_field :price
   %br
 
-  %br
-  %br
-  = f.collection_check_boxes :category_ids, Category.all, :id, :name
+  = f.collection_select :monthly_id, Monthly.all, :id, :start_at
+  = f.collection_select :category_id, Category.all, :id, :name
+
   = f.submit "新規作成"
-
-
-
+  %br
+  %br

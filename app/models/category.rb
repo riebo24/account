@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  has_many :posts
-  belongs_to :budgets, optional: true
+  has_many :posts, dependent: :destroy
+  has_many :budgets, dependent: :destroy
+  has_many :monthlies, through: :monthlies_categories
+  has_many :monthlies_categories
   belongs_to :user, optional: true
-  has_many :budgets, through: :budgets_categories
-  has_many :budgets_categories
 end

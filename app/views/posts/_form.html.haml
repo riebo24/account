@@ -3,5 +3,8 @@
   = f.number_field :price
   = f.label :memo
   = f.text_field :memo
+  = f.collection_check_boxes :tag_ids, Tag.all, :id, :name
+  = f.date_field :date
+  = f.collection_select :category_id, current_user.categories, :id, :name
 
-  = f.submit "新規作成"
+  = f.submit "SEND"

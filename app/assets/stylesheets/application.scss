@@ -4,6 +4,8 @@
 @import "./tags";
 @import "./user";
 @import "./reset";
+@import "monthlies";
+
 *{
   box-sizing: border-box;
 }
@@ -39,4 +41,5 @@ header{
       margin: 10px;}
 
   }
+
 }
