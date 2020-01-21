@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def converting_to_jpy(price)
-    "#{price.to_s(:delimited, delimiter: ',')}円"
-  end
 
   
   protected

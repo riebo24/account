@@ -15,7 +15,16 @@ class BudgetsController < ApplicationController
     @budget = Budget.new  
     @monthly = Category.find(2) 
 
+<<<<<<< Updated upstream
     end
+=======
+  end
+
+  def new_monthly
+
+    
+  end
+>>>>>>> Stashed changes
 
 
   def create
@@ -29,7 +38,7 @@ class BudgetsController < ApplicationController
   end
 
   def edit
-    @budget = Budget.find(params[:id]).merge(user_id: current_user.id) 
+    @budget = Budget.find(params[:id])
   end
 
   def update
@@ -48,9 +57,7 @@ class BudgetsController < ApplicationController
   private
     
     def set_budget
-
-      params.require(:budget).permit(:price, category_ids: []).merge(user_id: current_user.id)
-
+      params.require(:budget).permit(:price, :category_id, :monthly_id).merge(user_id: current_user.id)
     end
 
     # def set_category

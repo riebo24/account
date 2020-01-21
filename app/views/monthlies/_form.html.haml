@@ -1,15 +1,39 @@
 = form_for @monthly do |f|
-  = f.label :price, '月予算'
-  = f.number_field :price
+  -# - if group.errors.any?
+  -#   .chat-group-form__errors
+  -#     %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+  -#     %ul
+  -#       - group.errors.full_messages.each do |message|
+  -#         %li= message
   %br
   = f.label :start_at, '開始日'
-  = f.date_select :start_at
+  = f.date_field :start_at
   %br
   = f.label :finish_at, '終了日'
-  = f.date_select :finish_at
+  = f.date_field :finish_at
   %br
+<<<<<<< Updated upstream
+=======
+  
   = f.fields_for :budgets do |b|
     = b.label :price, 'カテゴリー予算'
     = b.number_field :price
+    = b.collection_select :category_id, current_user.categories, :id, :name
   %br
+
+  = f.fields_for :budgets do |b|
+    = b.label :price, 'カテゴリー予算'
+    = b.number_field :price
+    = b.collection_select :category_id, current_user.categories, :id, :name
+
+>>>>>>> Stashed changes
+  = f.fields_for :budgets do |b|
+    = b.label :price, 'カテゴリー予算'
+    = b.number_field :price
+    = b.collection_select :category_id, current_user.categories, :id, :name
+  %br
+<<<<<<< Updated upstream
   = f.submit "新規作成"
+=======
+  = f.submit "SEND"
+>>>>>>> Stashed changes

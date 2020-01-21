@@ -2,4 +2,46 @@
 @import "./categories";
 @import "./posts";
 @import "./tags";
+<<<<<<< Updated upstream
 @import "./user";
+=======
+@import "./user";
+@import "./reset";
+@import "monthlies";
+*{
+  box-sizing: border-box;
+}
+
+content{
+  margin-top: 80px;
+}
+
+header{
+  height: 80px;
+  width:100vw;
+  // position: fixed;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: space-between;
+
+  .header_title{
+    line-height: 80px;
+    font-size: 30px;
+  }
+  .header_info{
+    display: flex;
+    justify-content: space-between;
+    
+    .user_name{
+      margin: 10px;
+
+    }
+    .top{
+      margin: 10px;
+    }
+    .log_in{  
+      margin: 10px;}
+
+  }
+}
+>>>>>>> Stashed changes

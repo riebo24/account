@@ -36,7 +36,7 @@ Things you may want to cover:
 |start_on|date|null: false|
 |end_on|date|null: false|
 ### Association
-- has_one :categoly
+- has_one :category
 
 
 ## categoriesテーブル
@@ -55,7 +55,7 @@ Things you may want to cover:
 ### Association
 - has_many :tags, through: :posts_tags
 - has_many :posts_tags
-- belongs_to :categoly
+- belongs_to :category
 
 
 ## tagsテーブル
