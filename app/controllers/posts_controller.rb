@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.limit(100)   
+    @posts = Post.all.limit(100)  
+ 
   end
 
   def new
@@ -9,7 +10,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(set_post)
-    binding.pry
     if @post.save 
       redirect_to posts_path
     else

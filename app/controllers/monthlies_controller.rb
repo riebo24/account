@@ -7,7 +7,15 @@ class MonthliesController < ApplicationController
 
   def show
     @monthly = Monthly.find(params[:id])
-    @posts = current_user.posts.where(date: @monthly.start_at..@monthly.finish_at)       
+    # @posts :@monthliesの期間の間に作成したpostを抽出(where)。category_id毎の新たなハッシュを作る（group_by）。その中から、２番目と最後[1..-1]を抽出する。それを配列の最初[0]に加える。最後のv[0]は不明。
+    @posts = current_user.posts.where(date: @monthly.start_at..@monthly.finish_at).group_by{ |i| i[:category_id]}.map{ |k, v| v[1..-1].each {|x| v[0][:price] += x[:price]}
+    v[0]} 
+
+    # @post= @posts.group_by{ |i| i[:category_id]}.map{ |k, v| v[1..-1].each {|x| v[0][:price] += x[:price]}
+    # v[0]}
+
+    @budgets = @monthly.budgets #monthliesに紐づいているbudgetsをカテゴリー毎に分類
+    # binding.pry
   end
 
   def new
@@ -17,7 +25,7 @@ class MonthliesController < ApplicationController
 
   def create
     @monthly = Monthly.new(set_monthly)
-    binding.pry
+    # binding.pry
     if @monthly.save 
       redirect_to monthlies_path
     else
@@ -46,9 +54,5 @@ class MonthliesController < ApplicationController
     def set_monthly
       params.require(:monthly).permit(:start_at, :finish_at, budgets_attributes:[:id, :price, :category_id]).merge(user_id: current_user.id)
     end
-
-    # def set_post
-
-    # end
 
 end

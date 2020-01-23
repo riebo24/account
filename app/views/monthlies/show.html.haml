@@ -1,9 +1,36 @@
 .monthly_header
   = "#{@monthly.start_at}〜#{@monthly.finish_at}までの月予算"
+%br
+%br
 
-  -# - @posts.each do |post|
-  -#   .monthly
-  -#     = post.category.name
-  -#     = post.price
+-# = @budgets
+-# %br
+-# = @posts
 
-  
+- @budgets.zip(@posts) do |b, p|
+  - if b.category.id == p.category.id
+    "OK"
+
+
+
+- @budgets.zip(@posts) do |b, p|
+  %table
+    %tr
+      %th  カテゴリー
+      %td.rate_now  
+        = b.category.name
+        = b.price
+
+
+
+      %tr
+      %th  使った金額
+      %td.return_now
+        = p.category.name
+        = p.price
+
+
+
+
+
+
