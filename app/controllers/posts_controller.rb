@@ -38,6 +38,6 @@ class PostsController < ApplicationController
   private
 
     def set_post
-      params.require(:post).permit(:price, :memo, :date, :category_id, tag_ids:[]).merge(user_id: current_user.id)
+      params.require(:post).permit(:p_price, :memo, :date, :category_id, tag_ids:[]).merge(user_id: current_user.id)
     end
 end

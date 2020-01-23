@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121062809) do
+ActiveRecord::Schema.define(version: 20200123034812) do
 
   create_table "budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "price"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20200121062809) do
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "price"
+    t.integer  "p_price"
     t.string   "memo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

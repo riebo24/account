@@ -1,6 +1,6 @@
 = form_for @post do |f|
-  = f.label :price
-  = f.number_field :price
+  = f.label :p_price
+  = f.number_field :p_price
   = f.label :memo
   = f.text_field :memo
   = f.collection_check_boxes :tag_ids, Tag.all, :id, :name

@@ -3,31 +3,62 @@
 %br
 %br
 
--# = @budgets
--# %br
--# = @posts
+-# - @budgets.each do |post|
+-#   = post.price
+-# = @data.each do |d|
+-#   = d.price
 
-- @budgets.zip(@posts) do |b, p|
-  - if b.category.id == p.category.id
-    "OK"
+-# # i = 0
+-# # while i <= 3
+-# # @data = [@budgets, @posts, @category_id].flatten.group_by{ |elem| elem[:category_id]}.flatten.each_slice(2).map(&:last)[i][0]
+-# # @data2 = [@budgets, @posts, @category_id].flatten.group_by{ |elem| elem[:category_id]}.flatten.each_slice(2).map(&:last)[i][1]
+-# # @data3 = [@budgets, @posts, @category_id].flatten.group_by{ |elem| elem[:category_id]}.flatten.each_slice(2).map(&:last)[i][2]
 
-
-
-- @budgets.zip(@posts) do |b, p|
-  %table
-    %tr
-      %th  カテゴリー
-      %td.rate_now  
-        = b.category.name
-        = b.price
+-# # @result_date = data.merge(data2).merge(data3)
+-# # pp @result_date
+-# # i += 1
+-# # end
 
 
 
-      %tr
-      %th  使った金額
-      %td.return_now
-        = p.category.name
-        = p.price
+
+-# - @budgets.zip(@posts) do |b, p|
+-#   - if b.category.id == p.category.id
+-#     "OK"
+
+
+
+-# - @budgets.zip(@posts) do |b, p|
+-#   %table
+-#     %tr
+-#       %th  カテゴリー
+-#       %td.rate_now  
+-#         = b.category.name
+-#         = b.price
+
+
+
+-#       %tr
+-#       %th  使った金額
+-#       %td.return_now
+-#         = p.category.name
+-#         = p.p_price
+
+- @date =  @budgets.find_by(monthly_id: @monthly.id)
+= @d = @categories.find(@date[:category_id]).name
+= @price = @date.price
+
+- @h = []
+- @posts.where(category_id: @date.category_id).each do |p|
+  - @h << p.p_price
+
+= @h.sum
+
+
+
+-# each do |b|
+-#   - b.find_by(params[:category_id])  
+-#     = b
 
 
 

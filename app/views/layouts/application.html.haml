@@ -8,13 +8,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      .header_title
-        家計簿
+      
+      = link_to "家計簿", root_path, class:"header_title"
       .header_info
         .user_name
           こんにちは、#{current_user.name}さん
         .top
-          =link_to "TOP", root_path
+          -# =link_to "TOP", root_path
         .log_in
           =link_to "ログイン", new_user_session_path
     %p.notice

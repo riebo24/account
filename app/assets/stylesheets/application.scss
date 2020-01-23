@@ -17,14 +17,16 @@ content{
 header{
   height: 80px;
   width:100vw;
-  // position: fixed;
+  // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
   background-color: gainsboro;
   display: flex;
   justify-content: space-between;
 
   .header_title{
+    color: black;
     line-height: 80px;
     font-size: 30px;
+    text-decoration: none;
   }
   .header_info{
     display: flex;
