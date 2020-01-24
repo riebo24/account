@@ -8,12 +8,19 @@
   %br
   %br
   カテゴリー予算
-  %br
-  - current_user.categories.each do |category|
-    = f.fields_for :budgets do |b|
+  %br  
+  = f.fields_for :budgets do |b|
+    - current_user.categories.each do |category|
       = category.name
       = b.hidden_field :category_id, value: category.id
       = b.number_field :price
       %br
-      -# = b.collection_select :category_id, current_user.categories, :id, :name
   = f.submit "新規作成"
+
+
+  -# - if group.errors.any?
+  -#   .chat-group-form__errors
+  -#     %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+  -#     %ul
+  -#       - group.errors.full_messages.each do |message|
+  -#         %li= message

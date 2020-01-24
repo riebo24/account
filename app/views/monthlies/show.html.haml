@@ -21,11 +21,11 @@
       %td
         = budget.category.name
       %td
-        = budget.price
+        = converting_to_jpy(budget.price)
       %td
-        = @post
+        = converting_to_jpy(@post)
       %td
-        = budget.price - @post
+        = converting_to_jpy(budget.price - @post)
 
 
 = pie_chart @data
