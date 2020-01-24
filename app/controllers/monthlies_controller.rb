@@ -9,8 +9,9 @@ class MonthliesController < ApplicationController
     @monthly = Monthly.find(params[:id])
 
     @posts = current_user.posts.where(date: @monthly.start_at..@monthly.finish_at)
-    @posts_price = current_user.posts.where(date: @monthly.start_at..@monthly.finish_at)
+    @posts_price = current_user.posts.where(date: @monthly.start_at..@monthly.finish_at).group(:category_id).sum(:p_price)
 
+    
     @budgets = @monthly.budgets #monthliesに紐づいているbudgetsをカテゴリー毎に分類
     @categories = current_user.categories
 
@@ -19,7 +20,6 @@ class MonthliesController < ApplicationController
     # v[0]} 
     # @data= @categories.name
     # binding.pry
-    @data = [['2019-06-01', 100], ['2019-06-02', 200], ['2019-06-03', 150]]
 
   end
 
