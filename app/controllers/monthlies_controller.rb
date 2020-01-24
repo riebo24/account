@@ -26,6 +26,7 @@ class MonthliesController < ApplicationController
   end
 
   def create
+
     @monthly = Monthly.new(set_monthly)
     # binding.pry
     if @monthly.save 

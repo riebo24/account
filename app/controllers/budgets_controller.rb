@@ -19,7 +19,7 @@ class BudgetsController < ApplicationController
 
   def create
     @budget = Budget.new(set_budget)
-    binding.pry
+    # binding.pry
     if @budget.save
       redirect_to budgets_path
     else
