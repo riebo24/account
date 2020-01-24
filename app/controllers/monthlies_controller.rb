@@ -2,7 +2,7 @@ class MonthliesController < ApplicationController
   # before_action :set_post, only: :show  showアクションんに入れた
 
   def index
-    @monthly = current_user.monthlies.limit(100)   
+    @monthly = current_user.monthlies.order(start_at: :ASC).limit(100)   
   end
 
   def show
