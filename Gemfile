@@ -57,4 +57,5 @@ gem 'erb2haml'
 gem 'pry-rails'
 gem 'devise'
 gem 'nested_form'
-
+gem "chartkick"
+gem 'chartable'

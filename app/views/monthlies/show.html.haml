@@ -27,15 +27,18 @@
       %td
         = budget.price - @post
 
-  -# - @budgets.each do |budget|
-  -#   - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
-  -#   - @post = @posts.where(category_id: category_id).sum(:p_price) 
-  -#   %td
-  -#     = budget.category.name
-  -#   %td
-  -#     = budget.price
-  -#   %td
-  -#     = @post
-  -#   %td
-  -#     = budget.price - @post
+
+= pie_chart @data
+
+-# - @budgets.each do |budget|
+-#   - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
+-#   - @post = @posts.where(category_id: category_id).sum(:p_price) 
+-#   %td
+-#     = budget.category.name
+-#   %td
+-#     = budget.price
+-#   %td
+-#     = @post
+-#   %td
+-#     = budget.price - @post
 
