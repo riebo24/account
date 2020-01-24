@@ -43,7 +43,12 @@ GEM
     bindex (0.8.1)
     builder (3.2.4)
     byebug (11.0.1)
+    chartable (0.0.0.3)
+      activesupport (>= 3.0.0)
+      chronic (~> 0.10)
+    chartkick (3.3.1)
     choice (0.2.0)
+    chronic (0.10.2)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -204,6 +209,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  chartable
+  chartkick
   coffee-rails (~> 4.2)
   devise
   erb2haml
