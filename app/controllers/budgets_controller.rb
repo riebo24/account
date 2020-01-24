@@ -13,7 +13,7 @@ class BudgetsController < ApplicationController
   
   def new
     @budget = Budget.new  
-    # @monthly = Category.find(5) 
+    @monthly = Category.find(5) 
   end
 
 

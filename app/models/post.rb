@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :price, presence:true
+  validates :p_price, presence:true
   validates :memo , length: { maximum: 30 }
   validates :date, presence:true
   has_many :tags, through: :post_tags

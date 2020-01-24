@@ -1,9 +1,41 @@
 .monthly_header
   = "#{@monthly.start_at}〜#{@monthly.finish_at}までの月予算"
+%br
+%br
 
-  -# - @posts.each do |post|
-  -#   .monthly
-  -#     = post.category.name
-  -#     = post.price
+%table
+  %tr
+    %th  
+      カテゴリー
+    %th  
+      予算
+    %th  
+      使ったお金
+    %th  
+      残金
+    
+  - @budgets.each do |budget|
+    - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
+    - @post = @posts.where(category_id: category_id).sum(:p_price) 
+    %tr
+      %td
+        = budget.category.name
+      %td
+        = budget.price
+      %td
+        = @post
+      %td
+        = budget.price - @post
 
-  
+  -# - @budgets.each do |budget|
+  -#   - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
+  -#   - @post = @posts.where(category_id: category_id).sum(:p_price) 
+  -#   %td
+  -#     = budget.category.name
+  -#   %td
+  -#     = budget.price
+  -#   %td
+  -#     = @post
+  -#   %td
+  -#     = budget.price - @post
+
