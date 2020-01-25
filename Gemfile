@@ -56,6 +56,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'pry-rails'
 gem 'devise'
-gem 'nested_form'
-gem "chartkick"
+gem 'nested_form' #fields_for用
+gem "chartkick" #円グラフ用
 gem 'chartable'
