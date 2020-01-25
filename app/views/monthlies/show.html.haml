@@ -13,31 +13,52 @@
       使ったお金
     %th  
       残金
-    
-  - @budgets.each do |budget|
-    - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
-    - @post = @posts.where(category_id: category_id).sum(:p_price) 
+
+
+  - @categories.each do |category|
+  - post = @posts.where(category_id: category.id).sum(:p_price) 
+  - budget = @budgets.where(category_id: category.id).sum(:price)
     %tr
       %td
-        = budget.category.name
+        = category.name
       %td
-        = converting_to_jpy(budget.price)
+        = converting_to_jpy(budget)
       %td
-        = converting_to_jpy(@post)
+        = converting_to_jpy(post)
       %td
-        = converting_to_jpy(budget.price - @post)
+        = converting_to_jpy(budget - post)
 
+= pie_chart @hash_forPieChart, suffix: "%", colors: ["#ffe0e0", "#ffe0ff","#eaeaff","#e0e0ff","#e0ffff","#e0ffe0","#ffffe0","#ffe0ef","#efe0ff","#e0efff","#e0ffef","#efffe0"]
 
-= pie_chart @posts_price, colors: ["#ffe0e0", "#ffe0ff","#eaeaff","#e0e0ff","#e0ffff","#e0ffe0","#ffffe0","#ffe0ef","#efe0ff","#e0efff","#e0ffef","#efffe0"]
--# - @budgets.each do |budget|
--#   - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
--#   - @post = @posts.where(category_id: category_id).sum(:p_price) 
+    
+
+-# - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
+-# - @post = @posts.where(category_id: category_id).sum(:p_price) 
+-# %tr
 -#   %td
 -#     = budget.category.name
 -#   %td
--#     = budget.price
+-#     = converting_to_jpy(budget.price)
 -#   %td
--#     = @post
+-#     = converting_to_jpy(@post)
 -#   %td
--#     = budget.price - @post
+-#     = converting_to_jpy(budget.price - @post)
+
+
+-# - @budgets.each do |budget|
+-# - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
+-# - @post = @posts.where(category_id: category_id).sum(:p_price) 
+-# %tr
+-#   %td
+-#     = budget.category.name
+-#   %td
+-#     = converting_to_jpy(budget.price)
+-#   %td
+-#     = converting_to_jpy(@post)
+-#   %td
+-#     = converting_to_jpy(budget.price - @post)
+
+
+
+
 
