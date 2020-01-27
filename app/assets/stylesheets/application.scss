@@ -5,13 +5,20 @@
 @import "./user";
 @import "./reset";
 @import "monthlies";
+@import "fullcalendar";
 
 *{
+
   box-sizing: border-box;
+  font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
+  // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
+  // font-family: 'Dancing Script', cursive;        //数字用フォント
+
 }
 
-content{
-  margin-top: 80px;
+
+content {
+  margin-top: 80px 10px;
 }
 
 header{
@@ -21,27 +28,54 @@ header{
   background-color: gainsboro;
   display: flex;
   justify-content: space-between;
-
-  .header_title{
-    color: black;
-    line-height: 80px;
-    font-size: 30px;
-    text-decoration: none;
-  }
-  .header_info{
-    display: flex;
-    justify-content: space-between;
-    
-    .user_name{
-      margin: 10px;
-
+  .header{
+    &_title{
+      // color: black;
+      line-height: 80px;
+      font-size: 30px;
+      // text-decoration: none;
     }
-    .top{
-      margin: 10px;
+    &_info{
+      display: flex;
+      justify-content: space-between;
+      
+      .user_name{
+        margin: 10px;
+      }
+      .top{
+        margin: 10px;
+      }
+      .log_in{  
+        margin: 10px;}
     }
-    .log_in{  
-      margin: 10px;}
-
   }
-
 }
+
+//リンクの下線を削除・colorを黒
+.invalid_link_decolation{
+  text-decoration: none;
+  color: black;
+}
+
+//priceの数字のフォントを変更
+.price{
+  font-family: 'Dancing Script', cursive;
+  font-size: 13px;
+}
+
+//入力フォーム marginの設定
+.form{
+  margin: 50px 50px;
+  .text_form{
+    padding: 0px 10px;
+    width: 300px;
+
+  }
+  .price_form{
+    padding: 0px 10px;
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+
+

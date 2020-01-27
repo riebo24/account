@@ -1,10 +1,23 @@
-= form_for @post do |f|
-  = f.label :p_price
-  = f.number_field :p_price
-  = f.label :memo
-  = f.text_field :memo
+= form_for @post, html: {class:"form"} do |f|
+  = f.label :date, "date　　　　"
+  = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class:"price_form"
+  %br
+  %br
+  = f.label :p_price, "price　　 　　"
+  = f.number_field :p_price, class:"price_form"
+  %br
+  %br
+  = f.label :memo, "memo　　　　"
+  = f.text_field :memo, class:"text_form"
+  %br
+  %br
+  = f.label :tag_ids, "タグ　　　　"
   = f.collection_check_boxes :tag_ids, Tag.all, :id, :name
-  = f.date_field :date
+  %br
+  %br
+  = f.label :tag_ids, "カテゴリー　　"
   = f.collection_select :category_id, current_user.categories, :id, :name
-
+  %br
+  %br
   = f.submit "SEND"
+

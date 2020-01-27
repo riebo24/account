@@ -1,7 +1,13 @@
-post　一覧
-%br
-%br
+-# post　一覧
+-# %br
+-# %br
 
-= link_to "postの登録", new_post_path
-= render @posts
+-# = link_to "postの登録", new_post_path
+-# = render @posts
 
+= month_calendar events: @posts do |date, posts|
+  .date
+    = date.day
+  - posts.each do |post|
+    = link_to converting_to_jpy(post.p_price), post_path(post.id), class: "invalid_link_decolation price"
+    %br

@@ -10,9 +10,41 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// = require jquery
+// = require jquery 
 // = require jquery_ujs
-// = require turbolinks
+//= require moment 
+//= require fullcalendar 
 // = require_tree .
 //= require Chart.bundle
 //= require chartkick
+
+$(function () {
+  function eventCalendar() {
+      return $('#calendar').fullCalendar({});
+  };
+  function clearCalendar() {
+      $('#calendar').html('');
+  };
+  $(document).on('turbolinks:load', function () {
+    eventCalendar();
+  });
+  $(document).on('turbolinks:before-cache', clearCalendar);
+  $('#calendar').fullCalendar({
+    events: '/posts.json'
+  //   events: [
+  // {
+  //   title: 'event1',
+  //   start: '2020-01-01'
+  // }, {
+  //   title: 'event2',
+  //   start: '2020-01-05',
+  //   end: '2020-01-07'
+  // }, {
+  //   title: 'event3',
+  //   start: '2020-01-09T12:30:00',
+  //   allDay: false
+  // }
+  // ]
+});
+});
+

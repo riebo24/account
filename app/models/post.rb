@@ -6,4 +6,9 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   belongs_to :category, optional: true
   belongs_to :user, optional: true
+
+  def start_time
+    self.date
+  end
+  
 end
