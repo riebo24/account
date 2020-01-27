@@ -13,52 +13,50 @@ table{
   padding: 0.2em 0.5em;
   margin: 2em auto;
   color: #565656;
-  background: #f0ffff;
-  box-shadow: 0px 0px 0px 10px #f0ffff;
-  border: dashed 2px #6495ed;
-  border-radius: 8px;
+  background: #fbfbfb;
+  // box-shadow: 0px 0px 0px 10px #f0ffff;
+  // border: dashed 2px #6495ed;
+  // border-radius: 8px;
 
 }
 
-// table tr{
-//   border-bottom: solid 1px #808080;
-//   cursor: pointer;
-// }
+//テーブル全体
+table{
 
-table tr:hover{
-  background-color:#eaffff;
+
+}
+table tr{
+  
+  border-bottom: solid 1px #808080;
+  cursor: pointer;
 }
 
+table tr.monthly_table:hover{
+  background-color: #e3e3e3;
+}
+
+//テーブルの見出し
 table th{
+  background-color: #efefef;
   text-align: center;
-  width: 25%;
+  width: 10%;
   padding: 15px 0;
   border-bottom: solid 1px #a0a0a0;
 }
 
+//テーブルのデータ
 table td{
+  font-family: 'Amatic SC', cursive;
   text-align: center;
-  width: 25%;
-  padding: 15px 0;
+  line-height:  20px;
+  // width: 10%;
+  padding: 30px 0;
   border-bottom: solid 0.1px #c0c0c0;
-}
+  &.right{
+    font-family: 'Dancing Script', cursive;
+    font-weight:bold;
+    text-align:right;
+    padding-right: 5vw;
 
-table td.icon{
-  background-size: 35px;
-  background-position: left 5px center;
-  background-repeat: no-repeat;
-  padding-left: 30px;
+  }
 }
-
-table td.icon.bird{
-  background-image: url(icon-bird.png)
-}
-
-table td.icon.whale{
-  background-image: url(icon-whale.png)
-}
-
-table td.icon.crab{
-  background-image: url(icon-crab.png)
-}
-
