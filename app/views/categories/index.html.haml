@@ -1,3 +1,10 @@
-カテゴリー一覧
-= link_to "新規カテゴリーの登録", new_category_path
-= render @categories
+.index_header
+  Category 一覧
+.add_new 
+  = link_to "add new category", new_category_path, class:"invalid_link_decolation"
+%table.only_name
+  %tr.hover
+    %th
+      name
+  =render @categories
+

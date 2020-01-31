@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rails-erd'
+  gem 'rails-erd'  # ER図を自動で作成できる
 end
 
 group :development do
@@ -54,7 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'pry-rails'
+
+
+
 gem 'devise'
 gem 'nested_form' #fields_for用
 gem "chartkick" #円グラフ用
@@ -63,3 +65,5 @@ gem 'jquery-rails' #fullcalendar導入に必要
 gem 'fullcalendar-rails' #fullcalendar導入に必要
 gem 'momentjs-rails' #fullcalendar導入に必要
 gem "simple_calendar", "~> 2.0"
+gem 'autonumeric-rails' #formの数字にコンマをつける　使えてない
+gem 'font-awesome-sass'

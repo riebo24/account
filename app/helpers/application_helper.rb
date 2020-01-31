@@ -3,9 +3,9 @@ module ApplicationHelper
     "#{price.to_s(:delimited, delimiter: ',')}円"
   end
 
-  def converting_to_yen(price)
-    "#{price.to_s(:delimited, delimiter: ',')}yen"
-  end
+  # def converting_to_yen(price)
+  #   "#{price.to_s(:delimited, delimiter: ',')}yen"
+  # end
   
 
   def set_year(date)

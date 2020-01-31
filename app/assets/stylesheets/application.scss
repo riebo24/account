@@ -6,6 +6,8 @@
 @import "./reset";
 @import "monthlies";
 @import "fullcalendar";
+@import "font-awesome-sprockets"; 
+@import "font-awesome";
 
 *{
 
@@ -30,10 +32,8 @@ header{
   justify-content: space-between;
   .header{
     &_title{
-      // color: black;
       line-height: 80px;
       font-size: 30px;
-      // text-decoration: none;
     }
     &_info{
       display: flex;
@@ -57,8 +57,8 @@ header{
   color: black;
 }
 
-//priceの数字のフォントを変更
-.price{
+//priceや日付等の数字のフォントを変更
+.num{
   font-family: 'Dancing Script', cursive;
   font-size: 13px;
 }
@@ -71,11 +71,118 @@ header{
     width: 300px;
 
   }
-  .price_form{
+  .num_form{
     padding: 0px 10px;
     font-family: 'Dancing Script', cursive;
   }
 }
 
+//一覧画面のヘッダー
+.index_header{
+  margin: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+
+//右寄せの場合
+.left{
+  text-align: center;
+}
+
+//アイコン
+.icon{
+  color: black;
+  font-size: 12px;
+  font-weight: lighter;
+  -webkit-text-stroke: 0.7px white
+}
 
 
+//テーブル全体
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  padding: 0.2em 0.5em;
+  margin: 2em auto;
+  color: #565656;
+  background: #fbfbfb;
+  // box-shadow: 0px 0px 0px 10px #f0ffff;
+  // border: dashed 2px #6495ed;
+  // border-radius: 8px;
+
+}
+table tr{  
+  border-bottom: solid 1px #808080;
+  cursor: pointer;
+}
+
+table tr.hover:hover{
+  background-color: #e3e3e3;
+}
+//見出し
+table th{
+  background-color: #efefef;
+  text-align: center;
+  width: 10%;
+  padding: 15px 0;
+  border-bottom: solid 1px #a0a0a0;
+}
+//データ
+table td{
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  line-height:  20px;
+  // width: 10%;
+  padding: 30px 0;
+  border-bottom: solid 0.1px #c0c0c0;
+
+}
+
+.memo{
+  width: 20%;
+}
+
+
+
+
+
+//nameのみのテーブル
+td tr.right{
+  width: 10px;
+  text-align: right;
+}
+table.only_name{
+  text-align: center;
+  width: 500px;
+}
+
+.table_position{
+  // display: flex;
+  // // justify-content: space-between;
+  position: relative;
+}
+
+.table_content{
+  text-align: center;
+
+}
+.table_icon{
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  width: 30px;
+  margin: 0px 10px;
+}
+
+.add_new{
+  text-align: center;
+  position: relative;
+
+  &_post{
+    position: absolute;
+    top:50px;
+    right: 10vw;
+
+  }
+}
