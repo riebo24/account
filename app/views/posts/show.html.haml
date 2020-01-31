@@ -1,7 +1,31 @@
-.post
-  = @post.p_price
-  = @post.memo
-  %br
-  = @post.date
-  = link_to "編集", edit_post_path(@post)
-  = link_to "削除", post_path(@post), method: :delete
+%table
+  %tr
+    %th
+      date
+    %th
+      category
+    %th
+      price
+    %th
+      memo
+      
+
+  %tr
+    %td.num
+      = @post.date
+    %td.num
+      = @post.category.name
+    %td.num
+      = converting_to_jpy(@post.p_price)
+    %td
+      .table_position
+        .table_content
+          = @post.memo
+        %br
+        .table_icon
+          = link_to edit_post_path(@post), class:"invalid_link_decolation icon" do
+            = icon("fas", "edit")
+          = link_to post_path(@post), method: :delete, class:"invalid_link_decolation icon" do
+            = icon("fas", "trash")
+
+  

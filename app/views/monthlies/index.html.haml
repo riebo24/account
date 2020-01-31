@@ -1,6 +1,15 @@
-月予算　一覧
-%br
-%br
+.index_header
+  Budgets　一覧
+  %br
+.add_new
+  = link_to "add new budgets", new_monthly_path, class:"invalid_link_decolation"
+%table
+  %tr.hover
+    %th
+      期間
+    %th
+      予算合計
+    %th
+      使ったお金   
 
-= link_to "月予算の登録", new_monthly_path
-=render @monthly
+  =render partial: "monthly", collection: @monthlies, locals: {posts: @posts}
