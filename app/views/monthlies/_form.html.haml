@@ -1,11 +1,11 @@
 = form_for @monthly, html: {class:"form"} do |f|
   %br
   = f.label :start_at, 'start day'
-  = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"price_form"
+  = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
   %br
   %br
   = f.label :finish_at, 'finish day'
-  = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"price_form"
+  = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
   %br
   %br
   カテゴリー別予算
@@ -16,7 +16,7 @@
       = category.name
       = b.hidden_field :category_id, value: category.id
       = b.hidden_field :user_id, value: current_user.id
-      = b.number_field :price, class:"price_form", data: { autonumeric: {mDec: 0} }
+      = b.number_field :price, class:"num_form", data: { autonumeric: {mDec: 0} }
       %br
       %br
   = f.submit "SEND"

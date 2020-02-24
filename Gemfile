@@ -56,14 +56,14 @@ gem 'haml-rails'
 gem 'erb2haml'
 
 
-
+gem 'pry-rails'
 gem 'devise'
 gem 'nested_form' #fields_for用
 gem "chartkick" #円グラフ用
 gem 'chartable'
 gem 'jquery-rails' #fullcalendar導入に必要
-gem 'fullcalendar-rails' #fullcalendar導入に必要
-gem 'momentjs-rails' #fullcalendar導入に必要
+# gem 'fullcalendar-rails' #fullcalendar導入に必要
+# gem 'momentjs-rails' #fullcalendar導入に必要
 gem "simple_calendar", "~> 2.0"
-gem 'autonumeric-rails' #formの数字にコンマをつける　使えてない
+gem 'autonumeric-rails' #formの数字にコンマをつける/使えてない
 gem 'font-awesome-sass'

@@ -23,9 +23,9 @@
           = @post.memo
         %br
         .table_icon
-          = link_to edit_post_path(@post), class:"invalid_link_decolation icon" do
+          = link_to edit_post_path(@post), class:"deco_none icon" do
             = icon("fas", "edit")
-          = link_to post_path(@post), method: :delete, class:"invalid_link_decolation icon" do
+          = link_to post_path(@post), method: :delete, class:"deco_none icon" do
             = icon("fas", "trash")
 
   

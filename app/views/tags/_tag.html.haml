@@ -2,16 +2,10 @@
   %td
     .table_position
       .table_content
-        = tag.name
+        = link_to tag.name, tag_path(tag.id), class: "deco_none"
       .table_icon
-        = link_to edit_tag_path(tag), class:"invalid_link_decolation icon" do
+        = link_to edit_tag_path(tag), class: "deco_none icon" do
           = icon("fas", "edit")
-        = link_to tag_path(tag), method: :delete, class:"invalid_link_decolation icon" do
+        = link_to tag_path(tag), method: :delete, class: "deco_none icon" do
           = icon("fas", "trash")
 
-
-
-  -# Tag名
-  -# = tag.name
-  -# = link_to "編集", edit_tag_path(tag)
-  -# = link_to "削除", tag_path(tag), method: :delete

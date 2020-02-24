@@ -17,10 +17,10 @@
 
   %body
     %header      
-      = link_to "家計簿", root_path, class:"invalid_link_decolation  header_title"
+      = link_to "家計簿", root_path, class:"deco_none  header_title"
       .header_info
         .user_name
-          こんにちは、#{current_user.name}さん
+          Hello、#{current_user.name}さん
         .log_in
           =link_to "ログイン", new_user_session_path
     %p.notice
