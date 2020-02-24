@@ -12,13 +12,8 @@
 //
 // = require jquery 
 // = require jquery_ujs
-//= require moment 
-//= require fullcalendar 
 // = require_tree .
 //= require Chart.bundle
 //= require chartkick
 //= require autonumeric
 
-$(function() {
-  $('.price_form').maskMoney();
-})

@@ -5,12 +5,10 @@
 @import "./user";
 @import "./reset";
 @import "monthlies";
-@import "fullcalendar";
 @import "font-awesome-sprockets"; 
 @import "font-awesome";
 
 *{
-
   box-sizing: border-box;
   font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
@@ -30,6 +28,7 @@ header{
   background-color: gainsboro;
   display: flex;
   justify-content: space-between;
+  padding: 0px 30px;
   .header{
     &_title{
       line-height: 80px;
@@ -38,21 +37,19 @@ header{
     &_info{
       display: flex;
       justify-content: space-between;
-      
-      .user_name{
-        margin: 10px;
-      }
-      .top{
-        margin: 10px;
-      }
+      line-height: 80px;
+      .user_name{}
+      .top{}
       .log_in{  
-        margin: 10px;}
+        padding: 0px 20px;
+        // margin: 10px;
+      }
     }
   }
 }
 
 //リンクの下線を削除・colorを黒
-.invalid_link_decolation{
+.deco_none{
   text-decoration: none;
   color: black;
 }
@@ -76,6 +73,12 @@ header{
     font-family: 'Dancing Script', cursive;
   }
 }
+
+.margin_right20{
+  margin-right: 20px;
+}
+
+
 
 //一覧画面のヘッダー
 .index_header{
@@ -107,36 +110,32 @@ table{
   margin: 2em auto;
   color: #565656;
   background: #fbfbfb;
-  // box-shadow: 0px 0px 0px 10px #f0ffff;
-  // border: dashed 2px #6495ed;
-  // border-radius: 8px;
 
-}
-table tr{  
-  border-bottom: solid 1px #808080;
-  cursor: pointer;
-}
+  tr{  
+    border-bottom: solid 1px #808080;
+    cursor: pointer;
+  }
 
-table tr.hover:hover{
-  background-color: #e3e3e3;
-}
-//見出し
-table th{
-  background-color: #efefef;
-  text-align: center;
-  width: 10%;
-  padding: 15px 0;
-  border-bottom: solid 1px #a0a0a0;
-}
-//データ
-table td{
-  font-family: 'Amatic SC', cursive;
-  text-align: center;
-  line-height:  20px;
-  // width: 10%;
-  padding: 30px 0;
-  border-bottom: solid 0.1px #c0c0c0;
-
+  tr.hover:hover{
+    background-color: #e3e3e3;
+  }
+  //見出し
+  th{
+    background-color: #efefef;
+    text-align: center;
+    width: 10%;
+    padding: 15px 0;
+    border-bottom: solid 1px #a0a0a0;
+  }
+  //データ
+  td{
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    line-height:  20px;
+    // width: 10%;
+    padding: 30px 0;
+    border-bottom: solid 0.1px #c0c0c0;
+  }
 }
 
 .memo{
@@ -158,8 +157,6 @@ table.only_name{
 }
 
 .table_position{
-  // display: flex;
-  // // justify-content: space-between;
   position: relative;
 }
 
