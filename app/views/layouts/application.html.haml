@@ -19,10 +19,16 @@
     %header      
       = link_to "家計簿", root_path, class:"deco_none  header_title"
       .header_info
-        .user_name
-          Hello、#{current_user.name}さん
-        .log_in
-          =link_to "ログイン", new_user_session_path
+        - if user_signed_in?
+          .user_name
+            Hello! #{current_user.name}さん
+          .log_in
+            = link_to "マイページ", "#", class: "deco_none"
+        -else
+          .user_name
+            Hello! ゲストさん
+          .log_in
+            =link_to "ログイン", new_user_session_path
     %p.notice
       = notice       
     %p.alert
