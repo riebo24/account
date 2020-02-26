@@ -1,3 +1,54 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post{
+  background-color: yellow;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+}
+
+// indexのカレンダー
+.simple-calendar {
+  font-family: 'Amatic SC', cursive;
+
+  .calendar-heading{
+    text-align: center;
+
+    .calendar-title{
+      font-size: 30px;
+    }
+  }
+
+  .date{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .day { 
+    position: relative;
+    height: 12vh;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {background-color: #e7e7e7}
+
+  .current-month:hover{
+    background-color:#e7e7e7;
+  }
+
+  // .past {background-color: gray;}
+  // .future {background-color: pink;}
+
+  // .start-date {}
+
+  // .prev-month {background-color: darkkhaki;}
+  // .next-month {background-color: darkred;}
+  // .current-month {}
+
+  // .has-events {background-color: darkseagreen;}
+}

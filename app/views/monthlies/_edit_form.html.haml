@@ -1,0 +1,26 @@
+= form_for @monthly do |f|
+  %br
+  = f.label :start_at, '開始日'
+  = f.date_field :start_at
+  %br
+  = f.label :finish_at, '終了日'
+  = f.date_field :finish_at
+  %br
+  %br
+  カテゴリー予算
+  %br  
+  = f.fields_for :budgets do |b|
+    - current_user.categories.each do |category|
+      = category.name
+      = b.hidden_field :category_id, value: category.id
+      = b.number_field :price
+      %br
+  = f.submit "新規作成"
+
+
+  -# - if group.errors.any?
+  -#   .chat-group-form__errors
+  -#     %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+  -#     %ul
+  -#       - group.errors.full_messages.each do |message|
+  -#         %li= message

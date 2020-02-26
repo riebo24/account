@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rails-erd'  # ER図を自動で作成できる
 end
 
 group :development do
@@ -49,8 +50,24 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
+
+
 gem 'pry-rails'
+gem 'devise'
+gem 'nested_form' #fields_for用
+gem "chartkick" #円グラフ用
+gem 'chartable'
+gem 'jquery-rails' #fullcalendar導入に必要
+# gem 'fullcalendar-rails' #fullcalendar導入に必要
+# gem 'momentjs-rails' #fullcalendar導入に必要
+gem "simple_calendar", "~> 2.0"
+gem 'autonumeric-rails' #formの数字にコンマをつける/使えてない
+gem 'font-awesome-sass'

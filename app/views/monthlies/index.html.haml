@@ -1,0 +1,15 @@
+.index_header
+  Budgets　一覧
+  %br
+.add_new
+  = link_to "add new budgets", new_monthly_path, class:"deco_none"
+%table
+  %tr.hover
+    %th
+      期間
+    %th
+      予算合計
+    %th
+      使ったお金   
+
+  =render partial: "monthly", collection: @monthlies, locals: {posts: @posts}

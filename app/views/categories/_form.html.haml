@@ -1,0 +1,7 @@
+= form_for @category, html: {class:"form"} do |f|
+  = f.label :name, "カテゴリー名　"
+  = f.text_field :name, class:"text_form"
+  %br
+  %br
+  = f.submit "SEND", class:"submit"
+
