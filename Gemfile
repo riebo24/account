@@ -76,3 +76,5 @@ gem 'jquery-rails' #fullcalendar導入に必要
 gem "simple_calendar", "~> 2.0"
 gem 'autonumeric-rails' #formの数字にコンマをつける/使えてない
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
