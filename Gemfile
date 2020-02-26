@@ -78,3 +78,4 @@ gem 'autonumeric-rails' #formの数字にコンマをつける/使えてない
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
