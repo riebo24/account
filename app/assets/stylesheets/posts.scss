@@ -1,17 +1,37 @@
+//index
+
+//新規投稿ボタンを固定すすための記述
+
+@mixin fix-add-new {
+  width: 80vw;
+  font-family: 'Amatic SC', cursive;
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  -webkit-transform : translateY(-10%);
+  transform : translateY(-10%);
+  -webkit-transform : translateX(-70%);
+  transform : translateX(-70%);  
+}
+
 .post{
-  background-color: yellow;
-  height: 100px;
-  width: 300px;
-  margin: 10px;
+  @include fix-add-new;
+  .add_new{
+    position: relative;
+    &_post{
+      position: absolute;
+      top:50px;
+      right: 10vw;
+    }
+  }
 }
 
 // indexのカレンダー
 .simple-calendar {
-  font-family: 'Amatic SC', cursive;
-
+  @include fix-add-new;
+  
   .calendar-heading{
     text-align: center;
-
     .calendar-title{
       font-size: 30px;
     }
@@ -36,10 +56,19 @@
   .wday-6 {}
 
   .today {background-color: #e7e7e7}
-
+  
+  .prev-month{
+    opacity: 0.5;
+    // background-color: #bfbfbf;
+  }
   .current-month:hover{
     background-color:#e7e7e7;
   }
+  .next-month{
+    opacity: 0.5;
+    // background-color: #b6b6b6;
+  }
+}
 
   // .past {background-color: gray;}
   // .future {background-color: pink;}
