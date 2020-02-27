@@ -21,4 +21,6 @@
     %p.alert
       = alert
     %content
-      = yield
+      = render "shared/header.html.haml"
+      .content
+        = yield
