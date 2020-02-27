@@ -4,6 +4,7 @@
 @import "./tags";
 @import "./user";
 @import "./reset";
+@import "./header";
 @import "monthlies";
 @import "font-awesome-sprockets"; 
 @import "font-awesome";
@@ -181,10 +182,10 @@ table.only_name{
   margin: 0px 10px;
 }
 
+
 .add_new{
   text-align: center;
   position: relative;
-
   &_post{
     position: absolute;
     top:50px;
@@ -193,23 +194,3 @@ table.only_name{
 }
 
 
-
-
-//headerのCSS
-.menu{
-  width: 300px;
-  height: 100vw;
-  background: #efefef;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  visibility: hidden;
-  opacity: 0;  //完全に透明
-  transition: opacity .7s ease, visibility .7s ease;
-}
-
-.open-menu {
-  visibility: visible;
-  z-index: 999; //最前面に表示
-  opacity: 1; //透明ではない
-}

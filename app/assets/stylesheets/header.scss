@@ -1,0 +1,48 @@
+//headerのCSS
+.menu{
+  width: 300px;
+  height: 100vw;
+  background: #efefef;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  visibility: hidden;
+  opacity: 0;  //完全に透明
+  transition: opacity .7s ease, visibility .7s ease;
+}
+
+.open-menu {
+  visibility: visible;
+  z-index: 999; //最前面に表示
+  opacity: 1; //透明ではない
+}
+
+
+.detailed_header {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+
+.detailed_header{
+  padding: 30px;
+  //ハンバーガーメニュー アイコン
+  span {
+    position: absolute;
+    height: 3px; //線の太さ
+    width: 25px; //長さ
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    cursor: pointer;
+  }
+  .top {
+    transform: translateY(-7px);
+  }
+  .bottom {
+    transform: translateY(7px);
+  }
+}
+
