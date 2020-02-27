@@ -8,9 +8,11 @@
 // indexのカレンダー
 .simple-calendar {
   font-family: 'Amatic SC', cursive;
+  z-index: 1;
 
   .calendar-heading{
     text-align: center;
+    
 
     .calendar-title{
       font-size: 30px;
@@ -36,19 +38,18 @@
   .wday-6 {}
 
   .today {background-color: #e7e7e7}
-
+  
+  .prev-month{
+    background-color: #bfbfbf;
+  }
   .current-month:hover{
     background-color:#e7e7e7;
   }
-
-  // .past {background-color: gray;}
-  // .future {background-color: pink;}
-
-  // .start-date {}
-
-  // .prev-month {background-color: darkkhaki;}
-  // .next-month {background-color: darkred;}
-  // .current-month {}
-
-  // .has-events {background-color: darkseagreen;}
+  .next-month{
+    background-color: #b6b6b6;
+  }
 }
+
+
+
+

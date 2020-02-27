@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :tags
   resources :monthlies
 
-  root "tops#index"
+  root "posts#index"
 
 end

@@ -1,43 +1,43 @@
-%br
-%br
+.top
+  %br
+  %br
+  ログイン中のユーザー
+  =current_user.name
+  %br
+  %br
 
-ログイン中のユーザー
-=current_user.name
-%br
-%br
 
+  = link_to "予算の登録", new_budget_path
+  = link_to "予算の一覧", budgets_path
+  -# = link_to "予算の編集", edit_budget_parh(@budget.id)
+  %br
+  %br
 
-= link_to "予算の登録", new_budget_path
-= link_to "予算の一覧", budgets_path
--# = link_to "予算の編集", edit_budget_parh(@budget.id)
-%br
-%br
+  = link_to "新規カテゴリーの登録", new_category_path
+  = link_to "新規カテゴリーの一覧", categories_path
+  -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
+  %br
+  %br
 
-= link_to "新規カテゴリーの登録", new_category_path
-= link_to "新規カテゴリーの一覧", categories_path
--# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
-%br
-%br
+  = link_to "月予算の登録", new_monthly_path
+  = link_to "月予算の一覧", monthlies_path
+  -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
+  %br
+  %br
 
-= link_to "月予算の登録", new_monthly_path
-= link_to "月予算の一覧", monthlies_path
--# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
-%br
-%br
+  = link_to "postの登録", new_post_path
+  = link_to "postの一覧", posts_path
+  -# = link_to "postの編集", edit_post_parh(@post.id)
+  %br
+  %br
 
-= link_to "postの登録", new_post_path
-= link_to "postの一覧", posts_path
--# = link_to "postの編集", edit_post_parh(@post.id)
-%br
-%br
+  = link_to "タグの登録", new_tag_path
+  = link_to "タグの一覧", tags_path
+  -# = link_to "タグの編集", edit_post_parh(@tag.id)
+  %br
+  %br
 
-= link_to "タグの登録", new_tag_path
-= link_to "タグの一覧", tags_path
--# = link_to "タグの編集", edit_post_parh(@tag.id)
-%br
-%br
-
-= link_to "ユーザーの新規登録", new_user_registration_path
-= link_to "ユーザーの編集", edit_user_registration_path(current_user)
--# = link_to "ユーザーの一覧", users_session_path
+  = link_to "ユーザーの新規登録", new_user_registration_path
+  = link_to "ユーザーの編集", edit_user_registration_path(current_user)
+  -# = link_to "ユーザーの一覧", users_session_path
 
