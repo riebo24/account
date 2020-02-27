@@ -1,18 +1,19 @@
-= form_for @budget, html: {class:"form"} do |f|
+.content
+  = form_for @budget, html: {class:"form"} do |f|
 
-  %br
-  = f.label :monthly_id, "期間を選択　　　　　"
-  = f.collection_select :monthly_id, Monthly.all, :id, :start_at
-  %br
-  %br
-  = f.label :price, "予算金額を入力　　　"
-  = f.number_field :price, class:"num_form"
-  %br
-  %br
-  = f.label :category_id, "カテゴリーを選択　　"
-  = f.collection_select :category_id, Category.all, :id, :name
-  %br
-  %br
-  = f.submit "新規作成"
-  %br
-  %br
+    %br
+    = f.label :monthly_id, "期間を選択　　　　　"
+    = f.collection_select :monthly_id, Monthly.all, :id, :start_at
+    %br
+    %br
+    = f.label :price, "予算金額を入力　　　"
+    = f.number_field :price, class:"num_form"
+    %br
+    %br
+    = f.label :category_id, "カテゴリーを選択　　"
+    = f.collection_select :category_id, Category.all, :id, :name
+    %br
+    %br
+    = f.submit "新規作成"
+    %br
+    %br

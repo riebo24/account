@@ -4,6 +4,7 @@
 @import "./tags";
 @import "./user";
 @import "./reset";
+@import "./header";
 @import "monthlies";
 @import "font-awesome-sprockets"; 
 @import "font-awesome";
@@ -18,17 +19,26 @@
 
 
 content {
-  margin-top: 80px 10px;
+  display: flex;
+  width: 100%;
+  
+  .posts{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+  }
 }
 
+
 header{
-  height: 80px;
-  width:100vw;
+  height: 100vh;
+  width: 100px;
   // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
   background-color: gainsboro;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 30px;
+  // display: flex;
+  // justify-content: space-between;
+  // padding: 30px 30px;
   .header{
     &_title{
       line-height: 80px;
@@ -172,14 +182,4 @@ table.only_name{
   margin: 0px 10px;
 }
 
-.add_new{
-  text-align: center;
-  position: relative;
 
-  &_post{
-    position: absolute;
-    top:50px;
-    right: 10vw;
-
-  }
-}
