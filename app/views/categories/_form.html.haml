@@ -1,4 +1,7 @@
-= form_for @category do |f|
-  = f.label :カテゴリー名を入力してください
-  = f.text_field :name
-  = f.submit "新規作成"
+= form_for @category, html: {class:"form"} do |f|
+  = f.label :name, "カテゴリー名　"
+  = f.text_field :name, class:"text_form"
+  %br
+  %br
+  = f.submit "SEND", class:"submit"
+

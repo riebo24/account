@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.limit(100)  
- 
+    @posts = current_user.posts.order(date: :ASC)
+    @posts_fo_calender = @posts.group(:date).sum(:p_price)
+    @keys = @posts_fo_calender.keys.map{|k| ["title", k]}.to_h
+    @values = @posts_fo_calender.values.map{|v| ["date", v]}.to_h
+    @hash = @keys.merge(@values) 
+    # binding.pry
+  end
+
+  def show
+    @post = Post.find(params[:id])    
   end
 
   def new

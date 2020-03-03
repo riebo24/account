@@ -1,25 +1,26 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Account
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    %header
-      
-      = link_to "家計簿", root_path, class:"header_title"
-      .header_info
-        .user_name
-          こんにちは、#{current_user.name}さん
-        .top
-          -# =link_to "TOP", root_path
-        .log_in
-          =link_to "ログイン", new_user_session_path
+    -#英数字用フォント Amatic SC
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 rel="stylesheet">
+    -#日本語用フォントM+ FONTS
+    <link rel="stylesheet" type="text/css" href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css">
+    -#数字用フォント font-family: 'Dancing Script', cursive;
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+
+  %body 
     %p.notice
       = notice       
     %p.alert
       = alert
     %content
-      = yield
+      = render "shared/header.html.haml"
+      .content
+        = yield

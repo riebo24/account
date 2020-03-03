@@ -4,44 +4,186 @@
 @import "./tags";
 @import "./user";
 @import "./reset";
+@import "./header";
 @import "monthlies";
+@import "font-awesome-sprockets"; 
+@import "font-awesome";
 
 *{
   box-sizing: border-box;
+  font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
+  // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
+  // font-family: 'Dancing Script', cursive;        //数字用フォント
+
 }
 
-content{
-  margin-top: 80px;
+
+content {
+  display: flex;
+  width: 100%;
+  
+  .posts{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+  }
 }
+
 
 header{
-  height: 80px;
-  width:100vw;
+  height: 100vh;
+  width: 100px;
   // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
   background-color: gainsboro;
-  display: flex;
-  justify-content: space-between;
-
-  .header_title{
-    color: black;
-    line-height: 80px;
-    font-size: 30px;
-    text-decoration: none;
-  }
-  .header_info{
-    display: flex;
-    justify-content: space-between;
-    
-    .user_name{
-      margin: 10px;
-
+  // display: flex;
+  // justify-content: space-between;
+  // padding: 30px 30px;
+  .header{
+    &_title{
+      line-height: 80px;
+      font-size: 30px;
     }
-    .top{
-      margin: 10px;
+    &_info{
+      display: flex;
+      justify-content: space-between;
+      line-height: 80px;
+      .user_name{}
+      .top{}
+      .log_in{  
+        padding: 0px 20px;
+        // margin: 10px;
+      }
     }
-    .log_in{  
-      margin: 10px;}
+  }
+}
+
+//リンクの下線を削除・colorを黒
+.deco_none{
+  text-decoration: none;
+  color: black;
+}
+
+//priceや日付等の数字のフォントを変更
+.num{
+  font-family: 'Dancing Script', cursive;
+  font-size: 13px;
+}
+
+//入力フォーム marginの設定
+.form{
+  margin: 50px 50px;
+  .text_form{
+    padding: 0px 10px;
+    width: 300px;
 
   }
+  .num_form{
+    padding: 0px 10px;
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+.margin_right20{
+  margin-right: 20px;
+}
+
+
+
+//一覧画面のヘッダー
+.index_header{
+  margin: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+
+//右寄せの場合
+.left{
+  text-align: center;
+}
+
+//アイコン
+.icon{
+  color: black;
+  font-size: 12px;
+  font-weight: lighter;
+  -webkit-text-stroke: 0.7px white
+}
+
+
+//テーブル全体
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  padding: 0.2em 0.5em;
+  margin: 2em auto;
+  color: #565656;
+  background: #fbfbfb;
+
+  tr{  
+    border-bottom: solid 1px #808080;
+    cursor: pointer;
+  }
+
+  tr.hover:hover{
+    background-color: #e3e3e3;
+  }
+  //見出し
+  th{
+    background-color: #efefef;
+    text-align: center;
+    width: 10%;
+    padding: 15px 0;
+    border-bottom: solid 1px #a0a0a0;
+  }
+  //データ
+  td{
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    line-height:  20px;
+    // width: 10%;
+    padding: 30px 0;
+    border-bottom: solid 0.1px #c0c0c0;
+  }
+}
+
+.memo{
+  width: 20%;
+}
+
+
+
+
+
+//nameのみのテーブル
+td tr.right{
+  width: 10px;
+  text-align: right;
+}
+table.only_name{
+  text-align: center;
+  width: 500px;
+}
+
+.table_position{
+  position: relative;
+}
+
+.table_content{
+  text-align: center;
 
 }
+.table_icon{
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  width: 30px;
+  margin: 0px 10px;
+}
+
+head{
+  width: 100vw;
+}
+
+

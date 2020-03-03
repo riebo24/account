@@ -1,0 +1,54 @@
+%header       
+  .detailed_header
+    .humberger_icon
+      %span#humberger.top
+      %span#humberger.middle
+      %span#humberger.bottom
+    .menu
+      .menu__list
+        - if user_signed_in?
+          .user_name
+            Hello
+            = link_to "#{current_user.name}さん", user_path(current_user.id), class: "deco_none"
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "deco_none"
+        - else
+          .user_name
+            Hello!  ゲストさん
+          .log_in
+            %p
+              =link_to "ログイン", new_user_session_path, class: "deco_none"
+            %p
+              = link_to "ユーザーの編集", edit_user_registration_path(current_user), class: "deco_none"
+              
+
+        -# = link_to "予算の登録", new_budget_path
+        -# = link_to "予算の一覧", budgets_path
+        -# = link_to "予算の編集", edit_budget_parh(@budget.id)
+
+        %p
+          = link_to "カテゴリー 登録", new_category_path, class:"deco_none"
+        %p
+          = link_to "カテゴリーリスト", categories_path, class:"deco_none"
+          -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
+        %p  
+          = link_to "予算 登録", new_monthly_path, class:"deco_none"
+        %p  
+          = link_to "予算 一覧", monthlies_path, class:"deco_none"
+          -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
+
+        %p
+          = link_to "post 登録", new_post_path, class:"deco_none"
+        %p
+          = link_to "post 一覧", posts_path, class:"deco_none"
+          -# = link_to "postの編集", edit_post_parh(@post.id)
+
+        %p 
+          = link_to "タグ登録", new_tag_path, class:"deco_none"
+        %p 
+          = link_to "タグリスト", tags_path, class:"deco_none"
+          -# = link_to "タグの編集", edit_post_parh(@tag.id)
+
+        -# = link_to "ユーザーの一覧", users_session_path
+        .close-menu
+          %span.right
+          %span.left

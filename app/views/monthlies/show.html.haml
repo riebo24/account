@@ -4,7 +4,7 @@
 %br
 
 %table
-  %tr
+  %tr.hover
     %th  
       カテゴリー
     %th  
@@ -15,22 +15,48 @@
       残金
 
 
-  - @categories.each do |category|
+  - @categories.each do |category|  
+  -#ユーザーに紐づいているカテゴリーをひとつずつeach文で取り出す
+
   - post = @posts.where(category_id: category.id).sum(:p_price) 
+  -# 期間中のpostのうち、カテゴリidが、今取り出しているカテゴリーidのものを抽出して、合計する
+
   - budget = @budgets.where(category_id: category.id).sum(:price)
-    %tr
+    -# 期間中のカテゴリー別の予算のうち、カテゴリidが、今取り出しているカテゴリーidのものを抽出して、合計する
+
+    %tr.hover
       %td
         = category.name
-      %td
+      %td.num
         = converting_to_jpy(budget)
-      %td
+      %td.num
         = converting_to_jpy(post)
-      %td
+        -# = link_to post_path(params[:id]) do
+        -#   = converting_to_jpy(post)
+      %td.num
         = converting_to_jpy(budget - post)
 
-= pie_chart @hash_forPieChart, suffix: "%", colors: ["#ffe0e0", "#ffe0ff","#eaeaff","#e0e0ff","#e0ffff","#e0ffe0","#ffffe0","#ffe0ef","#efe0ff","#e0efff","#e0ffef","#efffe0"]
 
-    
+= pie_chart @hash_forPieChart, suffix: "%", colors: ["#ffe0e0", "#ffe0ff","#eaeaff","#e0e0ff","#e0ffff","#e0ffe0","#ffffe0","#ffe0ef","#efe0ff","#e0efff","#e0ffef","#efffe0"]
+-# %br
+-# Tag一覧
+-# %br
+-# - @tags.each do |tag|
+-#   -@posts.each do |post|
+-#     - unless post.tag_ids == nil
+-#       - post = @posts.where(tag_id: tag.id).sum(:p_price) 
+-#       = "#{tag.name} : #{post}"
+
+
+-# - @posts.each do |post|
+-#   - tags = post.tags unless post.tag_ids == nil
+-#   - tags.each do |tag|
+-#     = tag.name  
+-#   %br  
+
+
+
+
 
 -# - category_id = budget.category_id #その月の予算に紐づくカテゴリーid
 -# - @post = @posts.where(category_id: category_id).sum(:p_price) 
