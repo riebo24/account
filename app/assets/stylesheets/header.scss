@@ -1,9 +1,12 @@
 //headerのCSS
 header{
-  position: relative;
-}
 .detailed_header{
   position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 22px;
+  vertical-align: middle;
+  padding: 45vh 30px;
 }
 .menu{
   width: 300px;
@@ -31,17 +34,11 @@ header{
 }
 
 
-.detailed_header {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
-}
+
 
 
 
 .detailed_header{
-  padding: 45vh 30px;
 
   @mixin hunberger_close {
     position: absolute;
@@ -78,7 +75,7 @@ header{
       }
   }
 
-
 }
 
+}
 

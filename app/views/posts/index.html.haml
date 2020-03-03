@@ -1,13 +1,11 @@
-.posts
-  .index
-    .add_new
-      .add_new_post
-        = link_to "add new post", new_post_path, class:"deco_none"
-    = month_calendar events: @posts do |date, posts|
-      .date
-        = date.day
-      - posts.each do |post|
-        = link_to converting_to_jpy(post.p_price), post_path(post.id), class: "deco_none price"
-        %br
+.post
+  .add_new
+    = link_to "add new post", new_post_path, class:"deco_none"
+  = month_calendar events: @posts do |date, posts|
+    .date
+      = date.day
+    - posts.each do |post|
+      = link_to converting_to_jpy(post.p_price), post_path(post.id), class: "deco_none price"
+      %br
 
 
