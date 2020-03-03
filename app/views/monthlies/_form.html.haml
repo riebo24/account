@@ -16,7 +16,7 @@
       = category.name
       = b.hidden_field :category_id, value: category.id
       = b.hidden_field :user_id, value: current_user.id
-      = b.number_field :price, class:"num_form", data: { autonumeric: {mDec: 0} }
+      = b.number_field :price, class:"num_form"
       %br
       %br
   = f.submit "SEND"
