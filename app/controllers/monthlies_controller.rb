@@ -37,8 +37,7 @@ class MonthliesController < ApplicationController
   def create
 
     @monthly = Monthly.new(set_monthly)
-    # binding.pry
-    if @monthly.save 
+    if @monthly.save
       redirect_to monthlies_path
     else
       render :new

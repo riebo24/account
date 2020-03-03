@@ -13,7 +13,9 @@
     = f.fields_for :budgets do |b|
       = category.name
       = b.hidden_field :category_id, value: category.id
-      = b.number_field :price
+      = b.hidden_field :user_id, value: current_user.id
+      = b.number_field :price, class:"num_form"
+      %br
       %br
       -# = b.collection_select :category_id, current_user.categories, :id, :name
   = f.submit "新規作成"
