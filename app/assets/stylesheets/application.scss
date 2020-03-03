@@ -14,13 +14,13 @@
   font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
   // font-family: 'Dancing Script', cursive;        //数字用フォント
-
 }
 
 
 content {
   display: flex;
   width: 100%;
+  overflow: hidden;
   
   .posts{
     width: 100%;
@@ -36,9 +36,6 @@ header{
   width: 100px;
   // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
   background-color: gainsboro;
-  // display: flex;
-  // justify-content: space-between;
-  // padding: 30px 30px;
   .header{
     &_title{
       line-height: 80px;
@@ -52,7 +49,6 @@ header{
       .top{}
       .log_in{  
         padding: 0px 20px;
-        // margin: 10px;
       }
     }
   }
@@ -63,6 +59,17 @@ header{
   text-decoration: none;
   color: black;
 }
+
+//
+.link_new{
+  display: block;
+  width: 50vw;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
 
 //priceや日付等の数字のフォントを変更
 .num{
@@ -162,8 +169,10 @@ td tr.right{
   text-align: right;
 }
 table.only_name{
+  overflow: scroll;
   text-align: center;
-  width: 500px;
+  width: 40vw;
+  max-width: 600px;
 }
 
 .table_position{

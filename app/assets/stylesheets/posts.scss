@@ -3,7 +3,6 @@
 //新規投稿ボタンを固定するための記述
 
 @mixin fix-add-new {
-  width: 90%;
   font-family: 'Amatic SC', cursive;
   position: absolute;
   top: 10%;
@@ -15,21 +14,29 @@
 }
 
 .post{
-  @include fix-add-new;
+  padding-top: 30px;
+  width: calc(100vw - 120px);
+  //headerの部分の長さを引いている
+  position: relative;
   .add_new{
-    position: relative;
+    // margin: 0 auto;
+    width: 80%;
+    max-width: 1100px;
+    text-align: right;
+    position: absolute;
+    top: 5vw;
+    right: 20vw;
+    text-align: right;
     &_post{
-      position: absolute;
-      top:50px;
-      right: 12vw;
     }
   }
 }
 
 // indexのカレンダー
 .simple-calendar {
-  @include fix-add-new;
-  
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
   .calendar-heading{
     text-align: center;
     .calendar-title{

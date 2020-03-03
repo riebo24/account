@@ -1,7 +1,6 @@
 .post
   .add_new
-    .add_new_post
-      = link_to "add new post", new_post_path, class:"deco_none"
+    = link_to "add new post", new_post_path, class:"deco_none"
   = month_calendar events: @posts do |date, posts|
     .date
       = date.day
