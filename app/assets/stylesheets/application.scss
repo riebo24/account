@@ -17,6 +17,27 @@
 }
 
 
+
+
+//汎用的に使うもの
+.font-large{
+  @include large;
+}
+
+.font-medium{
+  @include medium;
+}
+
+.font-small{
+  @include small;
+}
+//汎用的に使うものend
+
+
+
+
+
+
 content {
   display: flex;
   width: 100%;
@@ -27,37 +48,15 @@ content {
   }
   .content{
     width: 100%;
+    padding-top: 30px;
   }
 }
 
-
-header{
-  height: 100vh;
-  width: 100px;
-  // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
-  background-color: gainsboro;
-  .header{
-    &_title{
-      line-height: 80px;
-      font-size: 30px;
-    }
-    &_info{
-      display: flex;
-      justify-content: space-between;
-      line-height: 80px;
-      .user_name{}
-      .top{}
-      .log_in{  
-        padding: 0px 20px;
-      }
-    }
-  }
-}
 
 //リンクの下線を削除・colorを黒
 .deco_none{
   text-decoration: none;
-  color: black;
+  color: #707070;
 }
 
 //
