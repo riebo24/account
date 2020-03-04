@@ -6,7 +6,7 @@
       %span#hamberger.bottom
       //#hambergerは、JS用
     .menu
-      .menu__list
+      .menu__list.font-medium
         - if user_signed_in?
           .user_name
             Hello！
@@ -38,7 +38,9 @@
 
         .detail_memu
           %p.title
-            Budgets(予算) 
+            Budgets
+            .font-small
+              (予算) 
             %p.list
               = link_to "登録", new_monthly_path, class:"deco_none"
               = link_to "リスト", monthlies_path, class:"deco_none"

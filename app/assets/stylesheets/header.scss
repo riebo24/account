@@ -1,14 +1,14 @@
 //mixin
 @mixin large {
-  font-size: calc(35px + ((1vw - 6px)*5/6));
+  font-size: calc(25px + ((1vw - 6px)*5/6));
 }
 
 @mixin medium {  
-  font-size: calc(20px + ((1vw - 6px)*5/6));
+  font-size: calc(15px + ((1vw - 6px)*5/6));
 }
 
 @mixin small {
-  font-size: calc(15px + ((1vw - 6px)*2/6));
+  font-size: calc(10px + ((1vw - 6px)*2/6));
 }
 //mixin終了
 
@@ -84,10 +84,10 @@ header{
     .detail_memu{
       padding-top: 20px;
       .title{
-        @include medium;
+        @include large;
       }
       .list{
-        @include small;
+        @include medium;
       }
     }
   }
@@ -113,7 +113,8 @@ header{
   header{
     width: 100vw;
     height: 50px;
-    position: relative;
+
+  
     .hamburger_position{
       padding: 22px 0px 0px 90vw;
       //上hamburger iconの場所を設定
@@ -133,7 +134,7 @@ header{
       }
     }
   }
-} //@media終了
+} //レスポンシブ対応終了
 
 
 

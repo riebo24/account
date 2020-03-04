@@ -8,15 +8,36 @@
 @import "monthlies";
 @import "font-awesome-sprockets"; 
 @import "font-awesome";
+@font-face {
+  font-family: 'English';
+  src: font-url('SpartanMB-Light.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 *{
   box-sizing: border-box;
-  font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
+  font-family: 'English', cursive;   
+  font-weight: bold; 
+  // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
   // font-family: 'Dancing Script', cursive;        //数字用フォント
 }
 
+//mixin
+@mixin large {
+  font-size: calc(20px + ((1vw - 6px)*5/6));
+}
 
+@mixin medium {  
+  font-size: calc(15px + ((1vw - 6px)*5/6));
+}
+
+@mixin small {
+  font-size: calc(10px + ((1vw - 6px)*2/6));
+  display: inline;
+}
+//mixin終了
 
 
 //汎用的に使うもの
@@ -37,7 +58,6 @@
 
 
 
-
 content {
   display: flex;
   width: 100%;
@@ -49,6 +69,7 @@ content {
   .content{
     width: 100%;
     padding-top: 30px;
+    //header以外の要素全体を下に下げる
   }
 }
 
