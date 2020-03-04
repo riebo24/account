@@ -1,81 +1,139 @@
+//mixin
+@mixin large {
+  font-size: calc(35px + ((1vw - 6px)*5/6));
+}
+
+@mixin medium {  
+  font-size: calc(20px + ((1vw - 6px)*5/6));
+}
+
+@mixin small {
+  font-size: calc(15px + ((1vw - 6px)*2/6));
+}
+//mixin終了
+
+
+
 //headerのCSS
 header{
-.detailed_header{
-  position: relative;
-  display: inline-block;
+  //常に表示されるmenuバー
+  height: 100vh;
   width: 100px;
-  height: 22px;
-  vertical-align: middle;
-  padding: 45vh 30px;
-}
-.menu{
-  width: 300px;
-  height: 100vw;
-  background: #efefef;
-  visibility: hidden;
-  opacity: 0;  //完全に透明
-  transition: opacity .7s ease, visibility .7s ease;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  &__list{
-    position: absolute;
-    top: 20%;
-    left: 30px;
-    -webkit-transform : translateY(-20%);
-    transform : translateY(-20%);
-  }
-}
+  background-color: gainsboro;
 
-.open-menu {
-  visibility: visible;
-  z-index: 999; //最前面に表示
-  opacity: 1; //透明ではない
-}
+  //hamburger-icon固定用
+  .hamburger_position{
+    position: relative;
+    display: inline-block;
+    padding: 45vh 30px;
 
-
-
-
-
-
-.detailed_header{
-
-  @mixin hunberger_close {
-    position: absolute;
-    height: 3px; //線の太さ
-    width: 25px; //長さ
-    border-radius: 3px;
-    background: #555;
-    display: block;
-    cursor: pointer;
-  }
-
-  //ハンバーガーメニュー アイコン
-  span {
-    @include hunberger_close;
-  }
-  .top {
-    transform: translateY(-7px);
-  }
-  .bottom {
-    transform: translateY(7px);
-  }
-
-  //メニューを閉じるボタン
-  .close-menu{
-    padding: 30px 0;
-    span{
-      @include hunberger_close;
+    //hamburger-icon(横線)
+      @mixin hamburger_line {
+        position: absolute;
+        height: 3px; //線の太さ
+        width: 25px; //長さ
+        border-radius: 3px;
+        background: #555;
+        display: block;
+        cursor: pointer;
     }
+    //ハンバーガーメニュー アイコン
+    span {
+      @include hamburger_line;
+    }
+    .top {
+      transform: translateY(-7px);
+    }
+    .bottom {
+      transform: translateY(7px);
+    }
+
+    //メニューを閉じるボタン
+    .close-menu{
+      padding: 30px 0;
+      span{
+        @include hamburger_line;
+      }
       .right{
         transform: rotate(-45deg)
       }
       .left{
         transform: rotate(45deg)
       }
+    }
+  }
+
+  //詳細なmenu（JSが実行され、.open-menuが追加されるまでは非表示）
+  .menu{
+    width: 300px;
+    height: 100vh;
+    background: #efefef;
+    visibility: hidden;
+    opacity: 0;  //完全に透明
+    transition: opacity .7s ease, visibility .7s ease;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    &__list{
+      position: absolute;
+      top: 20%;
+      left: 30px;
+      -webkit-transform : translateY(-20%);
+      transform : translateY(-20%);
+    }
+    .detail_memu{
+      padding-top: 20px;
+      .title{
+        @include medium;
+      }
+      .list{
+        @include small;
+      }
+    }
+  }
+  //.menuを表示
+  .open-menu {
+    visibility: visible;
+    z-index: 999; //最前面に表示
+    opacity: 1; //透明ではない
   }
 
 }
 
-}
+
+
+//レスポンシブ対応
+@media screen and (max-width:480px) {
+ 
+  content {
+    display: block!important;
+    //ヘッダーのdisplay:flexを解除（うまく行かないので!importantで強制的に解除）
+  }
+
+  header{
+    width: 100vw;
+    height: 50px;
+    position: relative;
+    .hamburger_position{
+      padding: 22px 0px 0px 90vw;
+      //上hamburger iconの場所を設定
+    }
+
+    .menu{
+      width: 100vw;
+      height: 100vh;
+      margin: 0 auto;
+      &__list{
+        position: static;
+        -webkit-transform : translateY(0%);
+        transform : translateY(0%);
+        //リセット終わり
+        margin-top: 50px;
+        text-align: center;
+      }
+    }
+  }
+} //@media終了
+
+
 

@@ -14,12 +14,11 @@
 }
 
 .post{
-  padding-top: 30px;
+  padding-top: 20px;
   width: calc(100vw - 120px);
   //headerの部分の長さを引いている
   position: relative;
-  .add_new{
-    // margin: 0 auto;
+  .add_new_post{
     width: 80%;
     max-width: 1100px;
     text-align: right;
@@ -76,6 +75,28 @@
     opacity: 0.5;
     // background-color: #b6b6b6;
   }
+}
+
+@media screen and (max-width:480px) {
+  .post{
+    width: 95vw;
+    margin: 0 auto;
+    .add_new{
+      width: 95vw;
+      // margin: 0 auto;
+    }
+
+    .simple-calendar {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .add_new_post{
+      position: static; //postion:absoluteをリセット
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
 }
 
 
