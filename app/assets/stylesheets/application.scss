@@ -142,7 +142,7 @@ content {
 table{
   border-collapse: collapse;
   border-spacing: 0;
-  width: 80%;
+  width: 80vw;
   padding: 0.2em 0.5em;
   margin: 2em auto;
   color: #565656;
@@ -214,5 +214,13 @@ table.only_name{
 head{
   width: 100vw;
 }
+
+@media screen and (max-width:480px) {
+  table.only_name{
+    width: 80vw;
+  }
+
+}
+
 
 
