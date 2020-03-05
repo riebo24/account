@@ -1,7 +1,33 @@
+//mixin
+@mixin large {
+  font-size: calc(20px + ((1vw - 6px)*5/6));
+}
+
+@mixin medium {  
+  font-size: calc(15px + ((1vw - 6px)*5/6));
+}
+
+@mixin small {
+  font-size: calc(10px + ((1vw - 6px)*2/6));
+  display: inline;
+}
+
+@mixin submit-btn($width: 100px){
+  display: block;
+  background-color: #e0e0e0;
+  width: $width;
+  height: 40px;
+  margin: 20px auto;
+  //中央寄せ＋フォームとの空間
+  border-radius: 5px;
+}
+//mixin終了
+
+
+
 //index
 
 //新規投稿ボタンを固定するための記述
-
 @mixin fix-add-new {
   font-family: 'Amatic SC', cursive;
   position: absolute;
@@ -28,31 +54,34 @@
     text-align: right;
     padding-right: 30px;
     //.postのpadding-left分をマイマス
+    @include medium;
 
   }
 }
 
+
 // indexのカレンダー
 .simple-calendar {
+  @include medium;
+  //simple-calendarでフォントサイズを指定しないときのフォントサイズ
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
   .table-striped{
     width: 100%;
-  margin: 0px auto;
+    // margin: 0px auto;
   }
   .calendar-heading{
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
       a {
         color: #707070;
         padding: 10px;
       }
 
     .calendar-title{
-      font-size: 30px;
+      @include large;
     }
- 
   }
 
   .date{
@@ -73,34 +102,36 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {background-color: #e7e7e7}
+  .today {
+    background-color: #e7e7e7;
+  }
   
   .prev-month{
     opacity: 0.5;
-
   }
+
   .current-month:hover{
     background-color:#e7e7e7;
   }
+
   .next-month{
     opacity: 0.5;
-    // background-color: #b6b6b6;
   }
 }
 
 @media screen and (max-width:600px) {
 
   .post{
-    width: 95vw;
+    width: 93vw;
     height: calc(100vh - 100px);
-    margin: 0 auto;
-    padding: 0px 20px 0px 20px;
+    // margin: 0 auto;
+    padding: 0px 22px 0px 12px;
     .simple-calendar {
       width: 100%;
       height: calc(100vh - 100px);
       height: 20px;
       size: 200px;
-      margin: 0 auto;
+      // margin: 0 auto;
     
     }
     .add_new_post{
@@ -111,9 +142,9 @@
   }
 
 }
-.table-striped{
-  height: 300px;
-}
+// .table-striped{
+//   height: 300px;
+// }
 
 
 

@@ -279,7 +279,8 @@ head{
     height: calc(100vh - 50px);
     margin: 0px;
     padding-top: 50px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   table.only_name{
     width: 80vw;
