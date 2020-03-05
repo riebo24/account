@@ -43,12 +43,16 @@
   }
   .calendar-heading{
     text-align: center;
+    padding-bottom: 30px;
+      a {
+        color: #707070;
+        padding: 10px;
+      }
 
     .calendar-title{
       font-size: 30px;
     }
-
-  
+ 
   }
 
   .date{
@@ -90,14 +94,14 @@
     width: 95vw;
     height: calc(100vh - 100px);
     margin: 0 auto;
-    padding: 0px;
+    padding: 0px 20px 0px 20px;
     .simple-calendar {
       width: 100%;
       height: calc(100vh - 100px);
       height: 20px;
       size: 200px;
-      
       margin: 0 auto;
+    
     }
     .add_new_post{
       position: static; //postion:absoluteをリセット

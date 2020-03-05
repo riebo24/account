@@ -1,6 +1,6 @@
 = form_for @tag, html: {class:"form"} do |f|
-  = f.label :name, "タグ名　"
-  = f.text_field :name, class:"text-form"
-  %br
-  %br
-  = f.submit "SEND", class:"submit"
+  %ul
+    %li
+      = f.label :name, "Tag Name"
+      = f.text_field :name, class:"text-form"
+  = f.submit "Create", class:"submit-btn"

@@ -21,7 +21,7 @@
           %p
             =link_to "ログイン", new_user_session_path, class: "deco_none"
           %p
-            = link_to "ユーザーの編集", edit_user_registration_path(current_user), class: "deco_none"
+            = link_to "ユーザー登録", new_user_registration_path, class: "deco_none"
             
 
       -# = link_to "予算の登録", new_budget_path
@@ -32,8 +32,9 @@
         %p.title
           Category
         %p.list
-          = link_to "登録", new_category_path, class:"deco_none"
           = link_to "リスト", categories_path, class:"deco_none"
+          = link_to "登録", new_category_path, class:"deco_none"
+          
           -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
 
       .detail_memu
@@ -42,24 +43,24 @@
           .font-small
             (予算) 
           %p.list
-            = link_to "登録", new_monthly_path, class:"deco_none"
             = link_to "リスト", monthlies_path, class:"deco_none"
+            = link_to "登録", new_monthly_path, class:"deco_none"
             -# = link_to "カテゴリーの編集", edit_budget_parh(@category.id)
 
       .detail_memu
         %p.title
           Post
           %p.list
-            = link_to "登録", new_post_path, class:"deco_none"
             = link_to "リスト", posts_path, class:"deco_none"
+            = link_to "登録", new_post_path, class:"deco_none"
             -# = link_to "postの編集", edit_post_parh(@post.id)
 
       .detail_memu
         %p.title
           Tag
           %p.list
-            = link_to "登録", new_tag_path, class:"deco_none"
             = link_to "リスト", tags_path, class:"deco_none"
+            = link_to "登録", new_tag_path, class:"deco_none"
             -# = link_to "タグの編集", edit_post_parh(@tag.id)
 
             -# = link_to "ユーザーの一覧", users_session_path

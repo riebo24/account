@@ -1,32 +1,23 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Create Account
-      %h5 新規アカウントの作成
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .field
-          .field-label
-            = f.label :name
-          .field-input
-            = f.text_field :name, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .field
-          .field-label
-            = f.label :password
-            %i (英数字8文字以上)
-          .field-inputz
-            = f.password_field :password, autocomplete: "off"
-        .field
-          .field-label
-            = f.label :password_confirmation
-          .field-input
-            = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "Create Account", class: 'btn'
+%h1.font-large.center
+  Sign in
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  .error
+    = devise_error_messages!
+  %ul
+    %li
+      = f.label :name
+      = f.text_field :name, autofocus: true, class: "num-form"
+    %li
+      = f.label :email
+      = f.email_field :email, class: "num-form"
+    %li
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", class: "num-form"
+    %li 
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "off", class: "num-form"
+
+  = f.submit "Create Account", class: 'user-submit-btn'
+
+%p.center or
+= link_to "Log in", new_user_session_path, class: "deco_none center"

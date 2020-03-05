@@ -17,11 +17,11 @@
 
 
   %body 
-    %p.notice
-      = notice       
-    %p.alert
-      = alert
     %content
       = render "shared/header.html.haml"
+      = alert
       .content
+        %p.notice
+          = notice       
+        %p.alert
         = yield
