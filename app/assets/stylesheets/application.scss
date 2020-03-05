@@ -37,6 +37,16 @@
   font-size: calc(10px + ((1vw - 6px)*2/6));
   display: inline;
 }
+
+@mixin submit-btn($width: 100px){
+  display: block;
+  background-color: #e0e0e0;
+  width: $width;
+  height: 40px;
+  margin: 20px auto;
+  //中央寄せ＋フォームとの空間
+  border-radius: 5px;
+}
 //mixin終了
 
 
@@ -51,6 +61,12 @@
 
 .font-small{
   @include small;
+}
+
+.center{
+  text-align: center;
+  padding-bottom: 30px;
+  display: block;
 }
 //汎用的に使うものend
 
@@ -95,9 +111,7 @@ content {
   font-size: 13px;
 }
 
-//入力フォーム marginの設定
-.form{
-  // margin: 50px 50px;
+//入力フォームの設定
   .text-form{
     padding: 10px 10px;
     width: 80vw;
@@ -128,14 +142,12 @@ content {
 
 
   .submit-btn{
-    display: block;
-    background-color: #e0e0e0;
-    width: 100px;
-    height: 40px;
-    margin: 20px auto;
-    //中央寄せ＋フォームとの空間
-    border-radius: 5px;
+    @include submit-btn()
+  }
 
+  .user-submit-btn{
+
+    @include submit-btn(200px)
   }
 
   //フォームを整列させる
@@ -150,13 +162,11 @@ content {
     label{
       text-align: left;
       margin: 0px 10px 10px 0px;
-      width: 25vw;
+      width: 24vw;
       float: left;
     }
  }
-
-}
-
+//入力フォーム終了
 
 
 
@@ -279,3 +289,6 @@ head{
 
 
 
+.notice{
+  width: 200px;
+}

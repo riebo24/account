@@ -1,8 +1,7 @@
 = form_for @category, html: {class:"form"} do |f|
   %ul
-    = f.label :name, "カテゴリー名　"
-    = f.text_field :name, class:"text-form"
-  %br
-  %br
-    = f.submit "SEND", class:"submit-btn"
+    %li
+      = f.label :name, "Category Name"
+      = f.text_field :name, class:"text-form"
+  = f.submit "Create", class:"submit-btn"
 

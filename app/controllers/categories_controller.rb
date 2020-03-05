@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(set_category)
 
     if @category.save
-      redirect_to root_path
+      redirect_to categories_path
     else
       render :new
     end
