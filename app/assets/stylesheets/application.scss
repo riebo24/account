@@ -60,15 +60,14 @@
 
 content {
   display: flex;
-  width: 100%;
   overflow: hidden;
-  
   .posts{
     width: 100%;
   }
   .content{
-    width: 100%;
-    padding-top: 30px;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 30px 20px;
     //header以外の要素全体を下に下げる
   }
 }
@@ -93,23 +92,73 @@ content {
 
 //priceや日付等の数字のフォントを変更
 .num{
-  font-family: 'Dancing Script', cursive;
   font-size: 13px;
 }
 
 //入力フォーム marginの設定
 .form{
-  margin: 50px 50px;
-  .text_form{
+  // margin: 50px 50px;
+  .text-form{
+    padding: 10px 10px;
+    width: 80vw;
+    max-width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+  }
+
+  .num-form{
     padding: 0px 10px;
-    width: 300px;
+    width: 80vw;
+    max-width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+    background-color: white;
+  }
+
+  .check-box{
+    height: 20px;
+    width: 20px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+    background-color: white;
+  }
+
+
+  .submit-btn{
+    display: block;
+    background-color: #e0e0e0;
+    width: 100px;
+    height: 40px;
+    margin: 20px auto;
+    //中央寄せ＋フォームとの空間
+    border-radius: 5px;
 
   }
-  .num_form{
-    padding: 0px 10px;
-    font-family: 'Dancing Script', cursive;
-  }
+
+  //フォームを整列させる
+  ul{
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 500px;
+    li{
+      display: flex;
+      margin-top: 10px;
+    }
+    label{
+      text-align: left;
+      margin: 0px 10px 10px 0px;
+      width: 25vw;
+      float: left;
+    }
+ }
+
 }
+
+
+
 
 .margin_right20{
   margin-right: 20px;
@@ -166,7 +215,6 @@ table{
   }
   //データ
   td{
-    font-family: 'Amatic SC', cursive;
     text-align: center;
     line-height:  20px;
     // width: 10%;
@@ -215,7 +263,14 @@ head{
   width: 100vw;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:600px) {
+  .content{
+    width: 100vw;
+    height: calc(100vh - 50px);
+    margin: 0px;
+    padding-top: 50px;
+    overflow: scroll;
+  }
   table.only_name{
     width: 80vw;
   }
