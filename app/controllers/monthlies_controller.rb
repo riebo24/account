@@ -15,7 +15,6 @@ class MonthliesController < ApplicationController
     #monthliesに設定されている期間内に投稿されたpostsを抽出
 
 
-
     #円グラフ表示用ハッシュの作成
     @posts_price = @posts.group(:category_id).sum(:p_price)
     @category_name = @posts_price.keys.map{|k|@categories.find(k).name} #@posts_priceのkey(category_id)をカテゴリ名に変更

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def converting_to_jpy(price)
-    "#{price.to_s(:delimited, delimiter: ',')}円"
+    "¥#{price.to_s(:delimited, delimiter: ',')}"
   end
 
   # def converting_to_yen(price)

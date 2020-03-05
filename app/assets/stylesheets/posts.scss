@@ -14,33 +14,41 @@
 }
 
 .post{
-  padding-top: 20px;
+  padding: 20px 30px;
   width: calc(100vw - 120px);
   //headerの部分の長さを引いている
   position: relative;
   .add_new_post{
-    width: 80%;
-    max-width: 1100px;
-    text-align: right;
+    width: calc(100% - 60px);
+    max-width: 1150px;
+    //.simple-calendarと同じwidth
     position: absolute;
-    top: 5vw;
-    right: 20vw;
+    top: 0px;
+    right: 0px;
     text-align: right;
-    &_post{
-    }
+    padding-right: 30px;
+    //.postのpadding-left分をマイマス
+
   }
 }
 
 // indexのカレンダー
 .simple-calendar {
-  width: 80%;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1150px;
   margin: 0 auto;
+  .table-striped{
+    width: 100%;
+  margin: 0px auto;
+  }
   .calendar-heading{
     text-align: center;
+
     .calendar-title{
       font-size: 30px;
     }
+
+  
   }
 
   .date{
@@ -50,7 +58,7 @@
   }
   .day { 
     position: relative;
-    height: 12vh;
+    height: 10vh;
   }
 
   .wday-0 {}
@@ -65,7 +73,6 @@
   
   .prev-month{
     opacity: 0.5;
-    // background-color: #bfbfbf;
 
   }
   .current-month:hover{
@@ -77,17 +84,19 @@
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:600px) {
+
   .post{
     width: 95vw;
+    height: calc(100vh - 100px);
     margin: 0 auto;
-    .add_new{
-      width: 95vw;
-      // margin: 0 auto;
-    }
-
+    padding: 0px;
     .simple-calendar {
       width: 100%;
+      height: calc(100vh - 100px);
+      height: 20px;
+      size: 200px;
+      
       margin: 0 auto;
     }
     .add_new_post{
@@ -97,6 +106,9 @@
     }
   }
 
+}
+.table-striped{
+  height: 300px;
 }
 
 

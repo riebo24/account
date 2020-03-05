@@ -1,22 +1,31 @@
 = form_for @monthly, html: {class:"form"} do |f|
-  %br
-  = f.label :start_at, 'start day'
-  = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
-  %br
-  %br
-  = f.label :finish_at, 'finish day'
-  = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
-  %br
-  %br
-  カテゴリー別予算
-  %br
-  %br
-  - current_user.categories.each do |category|
-    = f.fields_for :budgets do |b|
-      = category.name
-      = b.hidden_field :category_id, value: category.id
-      = b.hidden_field :user_id, value: current_user.id
-      = b.number_field :price, class:"num_form"
-      %br
-      %br
-  = f.submit "SEND"
+  %ul
+    %li
+      = f.label :start_at, 'Start day'
+      = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
+
+    %li
+      = f.label :finish_at, 'Finish day'
+      = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
+
+      -# = f.label :start_at, 'Start day'
+      -# = f.collection_select :start_at, current_user.monthlies, :id, :start_at, {},{"class":"num-form"}
+    %br
+    %br
+    カテゴリー別予算
+    %br
+    %br
+
+    - current_user.categories.each do |category|
+      = f.fields_for :budgets do |b|
+        %li
+          %label
+            = category.name
+          = b.number_field :price, class:"num-form"
+          = b.hidden_field :category_id, value: category.id
+          = b.hidden_field :user_id, value: current_user.id
+
+          %br
+          %br
+    
+    = f.submit "SEND", class:"submit-btn"
