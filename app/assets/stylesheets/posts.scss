@@ -7,6 +7,10 @@
   font-size: calc(15px + ((1vw - 6px)*5/6));
 }
 
+@mixin mediumer{
+  font-size: calc(10px + ((1vw - 6px)*5/6));
+}
+
 @mixin small {
   font-size: calc(10px + ((1vw - 6px)*2/6));
   display: inline;
@@ -24,7 +28,6 @@
 //mixin終了
 
 
-
 //index
 
 //新規投稿ボタンを固定するための記述
@@ -39,6 +42,7 @@
   transform : translateX(-70%);  
 }
 
+
 .post{
   padding: 20px 30px;
   width: calc(100vw - 120px);
@@ -46,7 +50,8 @@
   position: relative;
   .add_new_post{
     width: calc(100% - 60px);
-    max-width: 1150px;
+    //simple-calendarの余白部分の長さを引く
+    max-width: 1000px;
     //.simple-calendarと同じwidth
     position: absolute;
     top: 0px;
@@ -54,7 +59,7 @@
     text-align: right;
     padding-right: 30px;
     //.postのpadding-left分をマイマス
-    @include medium;
+    @include mediumer;
 
   }
 }
@@ -62,10 +67,11 @@
 
 // indexのカレンダー
 .simple-calendar {
-  @include medium;
+  @include mediumer;
   //simple-calendarでフォントサイズを指定しないときのフォントサイズ
   width: 100%;
-  max-width: 1150px;
+  max-width: 1000px;
+  height: 80vh;
   margin: 0 auto;
   .table-striped{
     width: 100%;
@@ -91,7 +97,8 @@
 
   .day { 
     position: relative;
-    height: 12vh;
+    height: 10vh;
+    //日付の枠のheight
   }
   .wday-0 {}
   .wday-1 {}
@@ -127,11 +134,13 @@
     padding: 0px 12px 0px 2px;
     
     .add_new_post{
+      @include medium;
       position: static; //postion:absoluteをリセット
       width: 100%;
       margin: 0 auto;
     }
     .simple-calendar {
+      @include medium;
       width: 100%;
       height: calc(100vh - 100px);
       height: 20px;
