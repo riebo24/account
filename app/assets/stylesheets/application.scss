@@ -17,7 +17,8 @@
 
 *{
   box-sizing: border-box;
-  font-family: 'English', cursive;   
+  font-family: 'English', cursive;
+  //上記@font-faceで定義   
   font-weight: bold; 
   // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
@@ -76,13 +77,13 @@
 
 content {
   display: flex;
-  overflow: hidden;
   .posts{
     width: 100%;
   }
   .content{
     box-sizing: border-box;
     width: 100vw;
+    height: 100vh;
     padding: 30px 20px;
     //header以外の要素全体を下に下げる
   }
@@ -178,7 +179,7 @@ content {
 
 //一覧画面のヘッダー
 .index_header{
-  margin: 30px;
+  margin: 10px;
   text-align: center;
   font-size: 30px;
 }
@@ -238,9 +239,6 @@ table{
 }
 
 
-
-
-
 //nameのみのテーブル
 td tr.right{
   width: 10px;
@@ -273,22 +271,33 @@ head{
   width: 100vw;
 }
 
+//レスポンシブ対応
 @media screen and (max-width:600px) {
+  content {
+    display: block!important;
+    //ヘッダーのdisplay:flexを解除（うまく行かないので!importantで強制的に解除）
+  }
   .content{
     width: 100vw;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 40px);
+    //header部分のheightを引く
     margin: 0px;
-    padding-top: 50px;
+    padding-top: 20px!important;
+    //.postのpadding-topを小さくする
     overflow-y: scroll;
     overflow-x: hidden;
   }
   table.only_name{
+    margin-top: 15px;
     width: 80vw;
   }
 
 }
 
-
+.form{
+  padding-top: 20px;
+  //.contentのpadding-topを小さくした分、formのpaddingを補正
+}
 
 .notice{
   width: 200px;
