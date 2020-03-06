@@ -142,9 +142,7 @@
     .simple-calendar {
       @include medium;
       width: 100%;
-      height: calc(100vh - 100px);
-      height: 20px;
-      size: 200px;
+      height: 80vh;
       // margin: 0 auto;
       table{
         margin: 0px;
