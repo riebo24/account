@@ -7,7 +7,7 @@ $(function(){
   $(".hamburger_position").on("click", function(){
     $(".menu").toggleClass('open-menu'); //隠れていた詳細なmenuが出現
     $(".content").css(open_menu)
-    // $(".post").css(open_menu_for_post)
+    $(".post").css(open_menu_for_post)
     //menuの横幅の分だけ、右に移動
   })
 
