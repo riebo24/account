@@ -39,6 +39,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rails-erd'  # ER図を自動で作成できる
+  gem 'rspec-rails' #テストコード用
+  gem 'factory_bot_rails' #テストコードを効率的に書く用。テストに利用するインスタンスをあらかじめ設定できる。
 end
 
 group :development do
