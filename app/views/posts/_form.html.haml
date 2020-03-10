@@ -14,7 +14,7 @@
 
     %li
       = f.label :tag_ids, "Tag"
-      = f.collection_check_boxes :tag_ids, Tag.all, :id, :name, {},{"class":"check-box"}
+      = f.collection_check_boxes :tag_ids, current_user.tags, :id, :name, {},{"class":"check-box"}
 
     %li
       = f.label :tag_ids, "category"
