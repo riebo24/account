@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rails-erd'  # ER図を自動で作成できる
   gem 'rspec-rails' #テストコード用
   gem 'factory_bot_rails' #テストコードを効率的に書く用。テストに利用するインスタンスをあらかじめ設定できる。
+  gem 'rails-controller-testing' #コントローラテスト用
 end
 
 group :development do
@@ -60,6 +61,12 @@ end
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+group :test do
+  gem 'faker', "~> 2.8" #ダミーのテストデータを作成
+end
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
