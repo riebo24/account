@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   has_many :budgets, dependent: :destroy
   has_many :monthlies, through: :monthlies_categories
   has_many :monthlies_categories
-  belongs_to :user, optional: true
+  belongs_to :user
 end

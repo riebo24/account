@@ -8,4 +8,11 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :monthlies, dependent: :destroy
+  
+  with_options presence: true do
+    validates :name
+    validates :email
+    validates :password
+  end
+
 end

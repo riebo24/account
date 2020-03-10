@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
   has_many :post_tags, dependent: :destroy
   belongs_to :category, optional: true
-  belongs_to :user, optional: true
+  belongs_to :user
 
   mount_uploader :memo, ImageUploader
 
