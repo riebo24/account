@@ -8,7 +8,7 @@ class Monthly < ApplicationRecord
 
   def finish_cannot_be_before_start
     if start_at >= finish_at
-      errors.add(:start_at, ":日付を確認してください")
+      errors.add(:start_at, "start dayはfinish dayより先の日付を設定してください")
     end
   end
 
