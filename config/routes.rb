@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :tags
   resources :monthlies
+  resources :incomes
+  resources :revenues
+
 
   root "posts#index"
 
