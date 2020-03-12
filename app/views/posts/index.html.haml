@@ -5,7 +5,7 @@
     .date
       = date.day
     - posts.each do |post|
-      = link_to converting_to_jpy(post.p_price), post_path(post.id), class: "deco_none price font-small"
+      = link_to converting_to_jpy_for_calender(post.p_price), post_path(post.id), class: "deco_none_red price font-small"
       %br
 
 
