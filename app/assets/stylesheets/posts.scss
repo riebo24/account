@@ -160,6 +160,37 @@
   }
 }
 
+
+#post-form{
+  background-color: #f4f4f4;
+  border-radius: 0px 0px 10px 10px;
+}
 #revenue-form{
   display: none;
+  background-color: #f4f4f4;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+
+.change-tab{
+  @mixin tab {
+    background-color: #f4f4f4;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    @include medium;
+  }
+  display: flex;
+  justify-content: baseline;
+  .post-tab{
+    border-radius: 10px 0px 0px 0px;
+    @include tab;
+  }
+  .revenue-tab{
+    @include tab;
+    border-radius: 0px 10px 0px 0px;
+    background-color: white;
+  }
 }
