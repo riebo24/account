@@ -1,0 +1,11 @@
+%tr.hover
+  %td
+    .table_position
+      .table_content
+        = income.name
+      .table_icon
+        = link_to edit_income_path(income), class:"deco_none icon" do
+          = icon("fas", "edit")
+        = link_to income_path(income), method: :delete, class:"deco_none icon" do
+          = icon("fas", "trash")
+

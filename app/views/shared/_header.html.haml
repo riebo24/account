@@ -65,6 +65,21 @@
 
             -# = link_to "ユーザーの一覧", users_session_path
 
+      .detail_memu
+        %p.title
+          Income
+          %p.list
+            = link_to "リスト", incomes_path, class:"deco_none"
+            = link_to "登録", new_income_path, class:"deco_none"
+
+      .detail_memu
+        %p.title
+          Revenue
+          %p.list
+            = link_to "リスト", revenues_path, class:"deco_none"
+            = link_to "登録", new_revenue_path, class:"deco_none"
+
+
       .close-menu
         %span#hamberger.right
         %span#hamberger.left

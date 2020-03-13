@@ -1,4 +1,10 @@
-= form_for @post, html: {class:"form"} do |f|
+.post-form
+  post
+.revenue-form
+  revenue
+
+
+= form_for @post, html: {class:"form", id: "post-form"} do |f|
   %ul
     %li
       = f.label :date, "date"
@@ -17,8 +23,30 @@
       = f.collection_check_boxes :tag_ids, current_user.tags, :id, :name, {},{"class":"check-box"}
 
     %li
-      = f.label :tag_ids, "category"
+      = f.label :category_ids, "category"
       = f.collection_select :category_id, current_user.categories, :id, :name, {},{"class":"num-form"}
+
+    = f.submit "Create", class:"submit-btn"
+
+
+
+= form_for @revenue, html: {class:"form", id: "revenue-form"} do |f|
+  %ul
+    %li
+      = f.label :date, "date"
+      = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class:"num-form"
+
+    %li
+      = f.label :r_price, "price"
+      = f.number_field :r_price, class:"num-form"
+
+    %li
+      = f.label :memo, "memo"
+      = f.text_field :memo, class:"text-form"
+
+    %li
+      = f.label :income_ids, "income"
+      = f.collection_select :income_id, Income.all, :id, :name, {},{"class":"num-form"}
 
     = f.submit "Create", class:"submit-btn"
 

@@ -1,7 +1,7 @@
 class IncomesController < ApplicationController
 
-  def index                                                                                                 def index
-    @categories = Income.all
+  def index
+    @incomes = Income.all
   end
 
   def new
@@ -9,11 +9,9 @@ class IncomesController < ApplicationController
   end
 
   def create
-
     @income = Income.new(set_income)
-
     if @income.save
-      redirect_to categories_path
+      redirect_to incomes_path
     else
       render :new
     end
@@ -26,13 +24,13 @@ class IncomesController < ApplicationController
   def update
     @income = Income.find(params[:id])   
     @income.update(set_income)
-    redirect_to categories_path
+    redirect_to incomes_path
   end
 
   def destroy
     @income = Income.find(params[:id])
     @income.destroy
-    redirect_to categories_path    
+    redirect_to incomes_path    
   end
 
   private

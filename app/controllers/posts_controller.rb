@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = current_user.posts.order(date: :ASC)
+    @revenues = current_user.revenues.order(date: :ASC)
     # @posts_fo_calender = @posts.group(:date).sum(:p_price)
     # @keys = @posts_fo_calender.keys.map{|k| ["title", k]}.to_h
     # @values = @posts_fo_calender.values.map{|v| ["date", v]}.to_h
@@ -13,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new   
+    @post = Post.new  
+    @revenue = Revenue.new  
   end
 
   def create

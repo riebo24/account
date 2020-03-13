@@ -1,0 +1,7 @@
+= form_for @income, html: {class:"form"} do |f|
+  %ul
+    %li
+      = f.label :name, "Income Name"
+      = f.text_field :name, class:"text-form"
+  = f.submit "Create", class:"submit-btn"
+

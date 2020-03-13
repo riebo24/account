@@ -1,0 +1,10 @@
+.index_header
+  Income リスト
+.add_new 
+  = link_to "add new income", new_income_path, class:"deco_none  link_new"
+%table.only_name
+  %tr.hover
+    %th
+      name
+  = render @incomes
+
