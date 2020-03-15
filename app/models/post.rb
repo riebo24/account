@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :user
 
-  mount_uploader :memo, ImageUploader
+  # mount_uploader :memo, ImageUploader
 
   def start_time
     self.date
