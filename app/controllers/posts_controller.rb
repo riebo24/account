@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   def index
     @posts = current_user.posts.order(date: :ASC)
     @revenues = Revenue.all.order(date: :ASC)
+    @arry = []
+    @arry << @posts
+    @arry << @revenues
     # @posts_fo_calender = @posts.group(:date).sum(:p_price)
     # @keys = @posts_fo_calender.keys.map{|k| ["title", k]}.to_h
     # @values = @posts_fo_calender.values.map{|v| ["date", v]}.to_h
@@ -29,11 +32,13 @@ class PostsController < ApplicationController
 
 
   def edit
-    @post = Post.find(params[:id])    
+    @post = Post.find(params[:id])  
+    @revenue = "aa"
   end
 
   def update
     @post = Post.find(params[:id])   
+    binding.pry
     @post.update(set_post)
     redirect_to posts_path
   end
@@ -48,6 +53,7 @@ class PostsController < ApplicationController
   private
 
     def set_post
+
       params.require(:post).permit(:p_price, :memo, :date, :category_id, tag_ids:[]).merge(user_id: current_user.id)
     end
 end

@@ -6,6 +6,13 @@
       = date.day
     - posts.each do |post|
       = link_to converting_to_jpy_for_calender(post.p_price), post_path(post.id), class: "deco_none_red price font-small"
-      %br
+      
+  -#   -# - revenues.each do |revenue|
+  -#   -#   = link_to converting_to_jpy_for_calender(revenue.r_price), revenue_path(revenue.id), class: "deco_none price font-small"
+  -#   -#   %br
 
-
+  -# = month_calendar events: @arry do |date, arry|
+  -#   .date
+  -#     = date.day
+  -#   - arry.each do |arry|
+  -#     arry.p_price
