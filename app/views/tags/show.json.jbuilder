@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.array! @search_posts do |post|
   json.id post.id
   json.p_price post.p_price

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class BudgetsController < ApplicationController
   # before_action :set_category
-  # 開始日が終了日より後でも登録可になっているので、改善したい。 
+  # 開始日が終了日より後でも登録可になっているので、改善したい。
 
   def index
     @budgets = Budget.all
@@ -8,14 +10,12 @@ class BudgetsController < ApplicationController
 
   def show
     @budget = Budget.find(params[:id])
-
   end
-  
+
   def new
-    @budget = Budget.new  
-    @monthly = Category.find(5) 
+    @budget = Budget.new
+    @monthly = Category.find(5)
   end
-
 
   def create
     @budget = Budget.new(set_budget)
@@ -32,7 +32,7 @@ class BudgetsController < ApplicationController
   end
 
   def update
-    @budget = Budget.find(params[:id])   
+    @budget = Budget.find(params[:id])
     @budget.update(set_budget)
     redirect_to budgets_path
   end
@@ -41,17 +41,15 @@ class BudgetsController < ApplicationController
     @budget = Budget.find(params[:id])
     @budget.destroy
     redirect_to budgets_path
-    
   end
 
   private
-    
-    def set_budget
-      params.require(:budget).permit(:price, :category_id, :monthly_id).merge(user_id: current_user.id)
-    end
 
-    # def set_category
-    #   @monthly = @budget.category if @budget.category?
-    # end
+  def set_budget
+    params.require(:budget).permit(:price, :category_id, :monthly_id).merge(user_id: current_user.id)
+  end
 
+  # def set_category
+  #   @monthly = @budget.category if @budget.category?
+  # end
 end

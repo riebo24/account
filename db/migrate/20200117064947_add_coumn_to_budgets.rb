@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddCoumnToBudgets < ActiveRecord::Migration[5.0]
   def change
     add_reference :budgets, :monthly, foreign_key: true
