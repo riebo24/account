@@ -12,10 +12,13 @@
       .table_content
         = link_to monthly_path(monthly.id), class: "deco_none num" do
           = converting_to_jpy(current_user.posts.where(date: monthly.start_at..monthly.finish_at).sum(:p_price))
+      .table_icon
+        = link_to monthly_path(monthly.id), method: :delete, class: "deco_none icon" do
+          = icon("fas", "trash")
+
+
       -# 編集のformがうまく行かないため、一旦コメントアウト
-      -# .table_icon
       -#   = link_to edit_monthly_path(monthly), class: "deco_none icon" do
       -#     = icon("fas", "edit")
-      -#   = link_to monthly_path(monthly), method: :delete, class: "deco_none icon" do
-      -#     = icon("fas", "trash")
+
 

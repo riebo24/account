@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  def edit
-  end
+  def edit; end
 
   def update
     if current_user.update(user_params)
@@ -10,11 +11,9 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
@@ -12,6 +14,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'bk4account'
+  config.fog_directory = 'bk4account'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/bk4account'
 end

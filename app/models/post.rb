@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
-  validates :p_price, presence:true
-  validates :memo , length: { maximum: 30 }
-  validates :date, presence:true
+  validates :p_price, presence: true
+  validates :memo, length: { maximum: 30 }
+  validates :date, presence: true
   has_many :tags, through: :post_tags
   has_many :post_tags, dependent: :destroy
   belongs_to :category, optional: true
@@ -10,7 +12,6 @@ class Post < ApplicationRecord
   # mount_uploader :memo, ImageUploader
 
   def start_time
-    self.date
+    date
   end
-  
 end
