@@ -11,6 +11,9 @@
 
   = f.submit "Log in", class: 'user-submit-btn'
 
+  %p.center or
+  = link_to 'Log in for TEST', users_guest_sign_in_path, method: :post, class: "deco_none center"
 
   %p.center or
   = link_to "Sign in", new_user_registration_path, class: "deco_none center"
+
