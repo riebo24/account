@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,7 +18,4 @@ module Account
     end
     config.time_zone = 'Tokyo'
   end
-
 end
-
-

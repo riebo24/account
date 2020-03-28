@@ -1,21 +1,19 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Log in
-      %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email, autofocus: true
-          .field
-            .field-label
-              = f.label :password
-              %i (英数字8文字以上)
-            .field-input
-              = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "Log in", class: 'btn'
+%h1.font-large.center
+  Login
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %ul
+    %li
+      = f.label :email
+      = f.email_field :email, class: "num-form"
+    %li
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", class: "num-form"
+
+  = f.submit "Log in", class: 'user-submit-btn'
+
+  %p.center or
+  = link_to 'Log in for TEST', users_guest_sign_in_path, method: :post, class: "deco_none center"
+
+  %p.center or
+  = link_to "Sign in", new_user_registration_path, class: "deco_none center"
+

@@ -14,7 +14,6 @@ $(function(){
                   <td>
                     <div class="table_position">
                       <div class="table_content">
-                      ${post.memo}
                       </div>
                       <br>
                       <div class="table_icon">
@@ -67,7 +66,6 @@ $(function(){
 
 
   $(".search-form").on("submit",function(e) {
-    console.log("発火")
     e.preventDefault()
     var search_date = $("#start_at").val()
     var tag_id = $(".submit-btn").data("id")
@@ -85,7 +83,7 @@ $(function(){
     
     .done(function(posts){
       //上記のpostsは、コントローラ/jbuilderを通して作成したデータ（検索結果）
-
+      console.log(posts)
       $(".submit-btn").prop('disabled', false); //submitボタンを何度も押せる様にする
       $("table").remove(); //元ののテーブルを削除
 

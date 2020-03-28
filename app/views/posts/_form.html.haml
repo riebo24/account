@@ -1,23 +1,24 @@
 = form_for @post, html: {class:"form"} do |f|
-  = f.label :date, "date　　　　"
-  = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
-  %br
-  %br
-  = f.label :p_price, "price　　 　　"
-  = f.number_field :p_price, class:"num_form"
-  %br
-  %br
-  = f.label :memo, "memo　　　　"
-  = f.text_field :memo, class:"text_form"
-  %br
-  %br
-  = f.label :tag_ids, "タグ　　　　"
-  = f.collection_check_boxes :tag_ids, Tag.all, :id, :name
-  %br
-  %br
-  = f.label :tag_ids, "カテゴリー　　"
-  = f.collection_select :category_id, current_user.categories, :id, :name
-  %br
-  %br
-  = f.submit "SEND"
+  %ul
+    %li
+      = f.label :date, "date"
+      = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class:"num-form"
+
+    %li
+      = f.label :p_price, "price"
+      = f.number_field :p_price, class:"num-form"
+
+    %li
+      = f.label :memo, "memo"
+      = f.text_field :memo, class:"text-form"
+
+    %li
+      = f.label :tag_ids, "Tag"
+      = f.collection_check_boxes :tag_ids, current_user.tags, :id, :name, {},{"class":"check-box"}
+
+    %li
+      = f.label :tag_ids, "category"
+      = f.collection_select :category_id, current_user.categories, :id, :name, {},{"class":"num-form"}
+
+    = f.submit "SEND", class:"submit-btn"
 

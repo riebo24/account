@@ -1,84 +1,183 @@
+//mixin
+@mixin large {
+  font-size: calc(25px + ((1vw - 6px)*5/6));
+}
+
+@mixin medium {  
+  font-size: calc(15px + ((1vw - 6px)*5/6));
+}
+
+@mixin small {
+  font-size: calc(10px + ((1vw - 6px)*2/6));
+}
+
+//hamburger-icon(横線)
+@mixin hamburger_line {
+  position: absolute;
+  height: 3px; //線の太さ
+  width: 25px; //長さ
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  cursor: pointer;
+}
+//mixin終了
+
+
+
 //headerのCSS
 header{
-  position: relative;
-}
-.detailed_header{
-  position: relative;
-}
-.menu{
-  width: 300px;
-  height: 100vw;
-  background: #efefef;
-  visibility: hidden;
-  opacity: 0;  //完全に透明
-  transition: opacity .7s ease, visibility .7s ease;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  &__list{
-    position: absolute;
-    top: 20%;
-    left: 30px;
-    -webkit-transform : translateY(-20%);
-    transform : translateY(-20%);
-  }
-}
+  //常に表示されるmenuバー
+  height: 100vh;
+  width: 100px;
+  background-color: gainsboro;
+  padding: 0px;
 
-.open-menu {
-  visibility: visible;
-  z-index: 999; //最前面に表示
-  opacity: 1; //透明ではない
-}
+  //hamburger-iconの親要素
+  .hamburger_position{
+    height: 100%;
+    width: 100%;
+    position: relative;
 
-
-.detailed_header {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
-}
-
-
-
-.detailed_header{
-  padding: 45vh 30px;
-
-  @mixin hunberger_close {
-    position: absolute;
-    height: 3px; //線の太さ
-    width: 25px; //長さ
-    border-radius: 3px;
-    background: #555;
-    display: block;
-    cursor: pointer;
-  }
-
-  //ハンバーガーメニュー アイコン
-  span {
-    @include hunberger_close;
-  }
-  .top {
-    transform: translateY(-7px);
-  }
-  .bottom {
-    transform: translateY(7px);
-  }
-
-  //メニューを閉じるボタン
-  .close-menu{
-    padding: 30px 0;
-    span{
-      @include hunberger_close;
+    //hamburger-icon固定用
+    .hamberger_icon{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 36%;
+      left: 32%;
     }
+
+    //ハンバーガーメニュー アイコン
+    span {
+      @include hamburger_line;
+    }
+    .middle {
+      transform: translateY(7px);
+    }
+    .bottom {
+      transform: translateY(14px);
+    }
+
+  }
+
+  //詳細なmenu（JSが実行され、.open-menuが追加されるまでは非表示）
+  .menu{
+    width: 300px;
+    height: 100vh;
+    background: #efefef;
+    visibility: hidden;
+    opacity: 0;  //完全に透明
+    transition: opacity .7s ease, visibility .7s ease;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    &__list{
+      position: absolute;
+      top: 20%;
+      left: 30px;
+      -webkit-transform : translateY(-20%);
+      transform : translateY(-20%);
+    }
+    .detail_memu{
+      padding-top: 20px;
+      .title{
+        @include large;
+      }
+      .list{
+        @include medium;
+      }
+    }
+
+    //menuを閉じるボタン
+    .close-menu{
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      z-index: 100;
+
+      span{
+        @include hamburger_line;
+      }
       .right{
         transform: rotate(-45deg)
       }
       .left{
         transform: rotate(45deg)
       }
+    }
+  }
+  //.menuを表示 JSで使用
+  .open-menu {
+    visibility: visible;
+    z-index: 999; //最前面に表示
+    opacity: 1; //透明ではない
   }
 
 
 }
+
+
+
+//レスポンシブ対応
+@media screen and (max-width:600px) {
+ 
+  header{
+    width: 100vw;
+    height: 40px;
+  
+    .hamburger_position{
+      width: 100vw;
+      height: 50px;
+      display: block;
+      height: 40px;
+      position: relative;
+      //hanbergerの位置を固定するのに必要
+      .hamberger_icon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        padding: 0px;
+        top: 12px;
+        left: 10px;
+        //hamburger iconの場所を設定
+      }
+      
+    }
+
+    .menu{
+      width: 100vw;
+      height: 100vh;
+      margin: 0 auto;
+      &__list{
+        position: static;
+        -webkit-transform : translateY(0%);
+        transform : translateY(0%);
+        //リセット終わり
+        margin-top: 50px;
+        text-align: center;
+      }
+      .close-menu{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: -30px;
+        right: 10px;
+        z-index: 10;
+        span{
+          @include hamburger_line;
+        }
+        .right{
+          transform: rotate(-45deg)
+        }
+        .left{
+          transform: rotate(45deg)
+        }
+      }
+    }
+
+  }
+} //レスポンシブ対応終了
+
 
 

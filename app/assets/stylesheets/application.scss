@@ -8,81 +8,176 @@
 @import "monthlies";
 @import "font-awesome-sprockets"; 
 @import "font-awesome";
+@font-face {
+  font-family: 'English';
+  src: font-url('SpartanMB-Light.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 *{
   box-sizing: border-box;
-  font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
+  font-family: 'English', cursive;
+  //上記@font-faceで定義   
+  font-weight: bold; 
+  // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
   // font-family: 'Dancing Script', cursive;        //数字用フォント
-
 }
+
+//mixin
+@mixin large {
+  font-size: calc(20px + ((1vw - 6px)*5/6));
+}
+
+@mixin medium {  
+  font-size: calc(15px + ((1vw - 6px)*5/6));
+}
+
+@mixin small {
+  font-size: calc(10px + ((1vw - 6px)*2/6));
+  display: inline;
+}
+
+@mixin submit-btn($width: 100px){
+  display: block;
+  background-color: #e0e0e0;
+  width: $width;
+  height: 40px;
+  margin: 20px auto;
+  //中央寄せ＋フォームとの空間
+  border-radius: 5px;
+}
+//mixin終了
+
+
+//汎用的に使うもの
+.font-large{
+  @include large;
+}
+
+.font-medium{
+  @include medium;
+}
+
+.font-small{
+  @include small;
+}
+
+.center{
+  text-align: center;
+  padding-bottom: 30px;
+  display: block;
+}
+//汎用的に使うものend
+
+
+
 
 
 content {
   display: flex;
-  width: 100%;
-  
   .posts{
     width: 100%;
   }
   .content{
-    width: 100%;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px 20px;
+    //header以外の要素全体を下に下げる
   }
 }
 
-
-header{
-  height: 100vh;
-  width: 100px;
-  // position: fixed; haadernを固定したいけど、固定したら、要素が上に上がってきてかぶる
-  background-color: gainsboro;
-  // display: flex;
-  // justify-content: space-between;
-  // padding: 30px 30px;
-  .header{
-    &_title{
-      line-height: 80px;
-      font-size: 30px;
-    }
-    &_info{
-      display: flex;
-      justify-content: space-between;
-      line-height: 80px;
-      .user_name{}
-      .top{}
-      .log_in{  
-        padding: 0px 20px;
-        // margin: 10px;
-      }
-    }
-  }
-}
 
 //リンクの下線を削除・colorを黒
 .deco_none{
   text-decoration: none;
-  color: black;
+  color: #707070;
 }
+
+.deco_none_red{
+  text-decoration: none;
+  color: #ff9999;
+}
+
+
+
+
+//
+.link_new{
+  display: block;
+  width: 50vw;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
 
 //priceや日付等の数字のフォントを変更
 .num{
-  font-family: 'Dancing Script', cursive;
   font-size: 13px;
 }
 
-//入力フォーム marginの設定
-.form{
-  margin: 50px 50px;
-  .text_form{
-    padding: 0px 10px;
-    width: 300px;
+//入力フォームの設定
+  .text-form{
+    padding: 10px 10px;
+    width: 80vw;
+    max-width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+  }
 
-  }
-  .num_form{
+  .num-form{
     padding: 0px 10px;
-    font-family: 'Dancing Script', cursive;
+    width: 80vw;
+    max-width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+    background-color: white;
   }
-}
+
+  .check-box{
+    height: 20px;
+    width: 20px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+    background-color: white;
+  }
+
+
+  .submit-btn{
+    @include submit-btn()
+  }
+
+  .user-submit-btn{
+
+    @include submit-btn(200px)
+  }
+
+  //フォームを整列させる
+  ul{
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 500px;
+    li{
+      display: flex;
+      margin-top: 10px;
+    }
+    label{
+      text-align: left;
+      margin: 0px 10px 10px 0px;
+      width: 24vw;
+      float: left;
+    }
+ }
+//入力フォーム終了
+
+
 
 .margin_right20{
   margin-right: 20px;
@@ -92,7 +187,7 @@ header{
 
 //一覧画面のヘッダー
 .index_header{
-  margin: 30px;
+  margin: 10px;
   text-align: center;
   font-size: 30px;
 }
@@ -115,7 +210,7 @@ header{
 table{
   border-collapse: collapse;
   border-spacing: 0;
-  width: 80%;
+  width: 80vw;
   padding: 0.2em 0.5em;
   margin: 2em auto;
   color: #565656;
@@ -139,7 +234,6 @@ table{
   }
   //データ
   td{
-    font-family: 'Amatic SC', cursive;
     text-align: center;
     line-height:  20px;
     // width: 10%;
@@ -153,17 +247,16 @@ table{
 }
 
 
-
-
-
 //nameのみのテーブル
 td tr.right{
   width: 10px;
   text-align: right;
 }
 table.only_name{
+  overflow: scroll;
   text-align: center;
-  width: 500px;
+  width: 40vw;
+  max-width: 600px;
 }
 
 .table_position{
@@ -186,4 +279,34 @@ head{
   width: 100vw;
 }
 
+//レスポンシブ対応
+@media screen and (max-width:600px) {
+  content {
+    display: block!important;
+    //ヘッダーのdisplay:flexを解除（うまく行かないので!importantで強制的に解除）
+  }
+  .content{
+    width: 100vw;
+    height: calc(100vh - 40px);
+    //header部分のheightを引く
+    margin: 0px;
+    padding-top: 20px!important;
+    //.postのpadding-topを小さくする
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  table.only_name{
+    margin-top: 15px;
+    width: 80vw;
+  }
 
+}
+
+.form{
+  padding-top: 20px;
+  //.contentのpadding-topを小さくした分、formのpaddingを補正
+}
+
+.notice{
+  width: 200px;
+}
