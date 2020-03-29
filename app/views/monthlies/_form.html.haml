@@ -2,14 +2,12 @@
   %ul
     %li
       = f.label :start_at, 'Start day'
-      = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
+      = f.date_field :start_at, value: Time.now.strftime("%Y-%m-%d"), class:"num-form"
 
     %li
       = f.label :finish_at, 'Finish day'
-      = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"num_form"
+      = f.date_field :finish_at, value: Time.now.strftime("%Y-%m-%d"), class:"num-form"
 
-      -# = f.label :start_at, 'Start day'
-      -# = f.collection_select :start_at, current_user.monthlies, :id, :start_at, {},{"class":"num-form"}
     %br
     %br
     カテゴリー別予算
