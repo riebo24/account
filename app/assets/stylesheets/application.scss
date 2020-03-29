@@ -15,15 +15,6 @@
   font-style: normal;
 }
 
-*{
-  box-sizing: border-box;
-  font-family: 'English', cursive;
-  //上記@font-faceで定義   
-  font-weight: bold; 
-  // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
-  // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
-  // font-family: 'Dancing Script', cursive;        //数字用フォント
-}
 
 //mixin
 @mixin large {
@@ -34,9 +25,12 @@
   font-size: calc(15px + ((1vw - 6px)*5/6));
 }
 
+@mixin small-medium{
+  font-size: calc(10px + ((1vw - 6px)*5/6));
+}
+
 @mixin small {
   font-size: calc(10px + ((1vw - 6px)*2/6));
-  display: inline;
 }
 
 @mixin submit-btn($width: 100px){
@@ -49,6 +43,18 @@
   border-radius: 5px;
 }
 //mixin終了
+
+*{
+  box-sizing: border-box;
+  font-family: 'English', cursive;
+  //上記@font-faceで定義   
+  font-weight: bold;
+  @include small-medium;
+   
+  // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
+  // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
+  // font-family: 'Dancing Script', cursive;        //数字用フォント
+}
 
 
 //汎用的に使うもの
@@ -116,7 +122,7 @@ content {
 
 
 //priceや日付等の数字のフォントを変更
-.num{
+.font13{
   font-size: 13px;
 }
 
@@ -200,9 +206,9 @@ content {
 //アイコン
 .icon{
   color: black;
-  font-size: 12px;
+  font-size: 12px!important;
   font-weight: lighter;
-  -webkit-text-stroke: 0.7px white
+  -webkit-text-stroke: 0.7px white;
 }
 
 
@@ -236,8 +242,9 @@ table{
   td{
     text-align: center;
     line-height:  20px;
+    height: 80px;
     // width: 10%;
-    padding: 30px 0;
+    // padding: 30px 0;
     border-bottom: solid 0.1px #c0c0c0;
   }
 }
@@ -258,21 +265,15 @@ table.only_name{
   width: 40vw;
   max-width: 600px;
 }
-
-.table_position{
-  position: relative;
-}
+//nameのみのテーブル終了
 
 .table_content{
   text-align: center;
+  font-size: 13px;
 
 }
 .table_icon{
-  position: absolute;
-  top: -2px;
-  right: 10px;
-  width: 30px;
-  margin: 0px 10px;
+  width: 50px;
 }
 
 head{
