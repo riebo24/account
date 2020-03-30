@@ -27,13 +27,13 @@
     %tr.hover
       %td
         = category.name
-      %td.font13
+      %td
         = converting_to_jpy(budget)
-      %td.font13
+      %td
         = converting_to_jpy(post)
         -# = link_to post_path(params[:id]) do
         -#   = converting_to_jpy(post)
-      %td.font13
+      %td
         = converting_to_jpy(budget - post)
 
 

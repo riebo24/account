@@ -7,40 +7,90 @@
 .table
   %table
     %tr
-      %th
+      %th.normal-width
         date
-      %th
+      %th.normal-width
         category
-      %th
+      %th.normal-width
         price
-      %th
+      %th.remaining
         memo
+      %th.table_icon
           
     - @posts.each do |post|
       %tr.hover
-        %td.num
+        %td.not-protrude
           = post.date
-        %td.num
-          = post.category.name
-        %td.num
-          = converting_to_jpy(post.p_price)
         %td
-          .table_position
-            .table_content
-              = post.memo
-            %br
-            .table_icon
-              = link_to edit_post_path(post), class:"deco_none icon" do
-                = icon("fas", "edit")
-              = link_to post_path(post), method: :delete, class:"deco_none icon" do
-                = icon("fas", "trash")
+          = post.category.name
+        %td
+          = converting_to_jpy(post.p_price)
+        %td.remaining
+          .not-protrude
+            = post.memo
+        %td.table-icon
+          .table_icon
+            = link_to edit_post_path(post), class:"deco_none icon" do
+              = icon("fas", "edit")
+            = link_to post_path(post), method: :delete, class:"deco_none icon" do
+              = icon("fas", "trash")
 
     %tr
       %th{colspan: "2"}
         合計金額
         
-      %th.num
-        = converting_to_jpy(@sum)
       %th
+        = converting_to_jpy(@sum)
+      %th{colspan: "2"}
+
+
+
+
+
+
+
+-# .search
+-#   = form_tag(tag_path, method: "get", class:"search-form" ) do
+-#     = label_tag :start_at, "期間で探す", class: "margin_right20"
+-#     = select_tag :start_at, options_for_select(@monthlies.map{|m| m.start_at})
+-#     = submit_tag "Send", class: "submit-btn", data: {id: params[:id]}
+
+-# .table
+-#   %table
+-#     %tr
+-#       %th
+-#         date
+-#       %th
+-#         category
+-#       %th
+-#         price
+-#       %th
+-#         memo
+          
+-#     - @posts.each do |post|
+-#       %tr.hover
+-#         %td
+-#           = post.date
+-#         %td
+-#           = post.category.name
+-#         %td
+-#           = converting_to_jpy(post.p_price)
+-#         %td
+-#           .table_position
+-#             .table_content
+-#               = post.memo
+-#             .table_icon
+-#               = link_to edit_post_path(post), class:"deco_none icon" do
+-#                 = icon("fas", "edit")
+-#               = link_to post_path(post), method: :delete, class:"deco_none icon" do
+-#                 = icon("fas", "trash")
+
+-#     %tr
+-#       %th{colspan: "2"}
+-#         合計金額
+        
+-#       %th
+-#         = converting_to_jpy(@sum)
+-#       %th
 
     
