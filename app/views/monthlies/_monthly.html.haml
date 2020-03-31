@@ -8,11 +8,11 @@
     = link_to monthly_path(monthly.id), class: "deco_none num" do
       = converting_to_jpy(monthly.budgets.sum(:price))
   %td
-    .table_position
-      .table_content
+    .table-position
+      .table-content
         = link_to monthly_path(monthly.id), class: "deco_none num" do
           = converting_to_jpy(current_user.posts.where(date: monthly.start_at..monthly.finish_at).sum(:p_price))
-      .table_icon
+      .table-icon
         = link_to monthly_path(monthly.id), method: :delete, class: "deco_none icon" do
           = icon("fas", "trash")
 

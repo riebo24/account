@@ -15,7 +15,7 @@
         price
       %th.remaining
         memo
-      %th.table_icon
+      %th.table-icon
           
     - @posts.each do |post|
       %tr.hover
@@ -29,7 +29,7 @@
           .not-protrude
             = post.memo
         %td.table-icon
-          .table_icon
+          .table-icon
             = link_to edit_post_path(post), class:"deco_none icon" do
               = icon("fas", "edit")
             = link_to post_path(post), method: :delete, class:"deco_none icon" do
@@ -76,10 +76,10 @@
 -#         %td
 -#           = converting_to_jpy(post.p_price)
 -#         %td
--#           .table_position
--#             .table_content
+-#           .table-position
+-#             .table-content
 -#               = post.memo
--#             .table_icon
+-#             .table-icon
 -#               = link_to edit_post_path(post), class:"deco_none icon" do
 -#                 = icon("fas", "edit")
 -#               = link_to post_path(post), method: :delete, class:"deco_none icon" do

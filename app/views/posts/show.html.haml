@@ -18,11 +18,11 @@
     %td
       = converting_to_jpy(@post.p_price)
     %td
-      .table_position
-        .table_content
+      .table-position
+        .table-content
           = @post.memo
         %br
-        .table_icon
+        .table-icon
           = link_to edit_post_path(@post), class:"deco_none icon" do
             = icon("fas", "edit")
           = link_to post_path(@post), method: :delete, class:"deco_none icon" do

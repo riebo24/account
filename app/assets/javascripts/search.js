@@ -12,8 +12,8 @@ $(function(){
                     ${post.p_price}
                   </td>
                   <td>
-                    <div class="table_position">
-                      <div class="table_content">
+                    <div class="table-position">
+                      <div class="table-content">
                       </div>
                       <br>
                       <div class="table_icon">

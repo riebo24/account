@@ -256,7 +256,7 @@ table{
   max-width: 30vw;
 }
 
-.table_icon{
+.table-icon{
   text-align: center;
   max-width: 50px!important;
   margin-right: 20px;
@@ -280,7 +280,7 @@ td tr.right{
   width: 10px;
   text-align: right;
 }
-table.only_name{
+table.only-name{
   overflow: scroll;
   text-align: center;
   width: 40vw;
@@ -288,14 +288,30 @@ table.only_name{
 }
 //nameのみのテーブル終了
 
-.table_content{
+.table-content{
   text-align: center;
   font-size: 13px;
-
 }
-.table_icon{
+
+.table-position{
+  position: relative;
+  display: flex;
+}
+
+.table-content-only-name{
+  width: calc(40vw);
+}
+.table-icon-only-name{
+  position: absolute;
+  top:10px;
+  right: 10px;
+}
+
+
+.table-icon{
   width: 50px;
 }
+
 
 head{
   width: 100vw;
@@ -317,7 +333,7 @@ head{
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  table.only_name{
+  table.only-name{
     margin-top: 15px;
     width: 80vw;
   }

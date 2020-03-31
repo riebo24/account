@@ -1,9 +1,9 @@
 %tr.hover
   %td
-    .table_position
-      .table_content
+    .table-position
+      .table-content
         = category.name
-      .table_icon
+      .table-icon
         = link_to edit_category_path(category), class:"deco_none icon" do
           = icon("fas", "edit")
         = link_to category_path(category), method: :delete, class:"deco_none icon" do
