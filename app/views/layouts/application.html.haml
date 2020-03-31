@@ -19,9 +19,6 @@
   %body 
     %content
       = render "shared/header.html.haml"
-      = alert
       .content
-        %p.notice
-          = notice       
-        %p.alert
+        = render "layouts/notice"
         = yield

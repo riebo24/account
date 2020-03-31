@@ -1,19 +1,20 @@
-%h1.font-large.center
-  Login
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  %ul
-    %li
-      = f.label :email
-      = f.email_field :email, class: "num-form"
-    %li
-      = f.label :password
-      = f.password_field :password, autocomplete: "off", class: "num-form"
+.user-wrapper
+  %h1.font-large.center
+    Login
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %ul
+      %li
+        = f.label :email
+        = f.email_field :email, class: "num-form"
+      %li
+        = f.label :password
+        = f.password_field :password, autocomplete: "off", class: "num-form"
 
-  = f.submit "Log in", class: 'user-submit-btn'
+    = f.submit "Log in", class: 'user-submit-btn'
 
-  %p.center or
-  = link_to 'Log in for TEST', users_guest_sign_in_path, method: :post, class: "deco_none center"
+    %p.center or
+    = link_to 'Log in for TEST', users_guest_sign_in_path, method: :post, class: "deco_none center"
 
-  %p.center or
-  = link_to "Sign in", new_user_registration_path, class: "deco_none center"
+    %p.center or
+    = link_to "Sign in", new_user_registration_path, class: "deco_none center"
 
