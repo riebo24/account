@@ -37,6 +37,10 @@
   font-size: calc(8px + 1vw);
 }
 
+@mixin smaller {
+  font-size: calc(1px + 1vw);
+}
+
 @mixin submit-btn($width: 100px){
   display: block;
   background-color: #e0e0e0;
@@ -48,13 +52,15 @@
 }
 //mixin終了
 
+
+
 *{
   box-sizing: border-box;
   font-family: 'English', cursive;
   //上記@font-faceで定義   
   font-weight: bold;
-  // @include small;
-   
+  @include smaller;
+  
   // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
   // font-family: 'Dancing Script', cursive;        //数字用フォント
@@ -76,6 +82,10 @@
 
 .font-small{
   @include small;
+}
+
+.font-smaller{
+  @include smaller
 }
 
 .center{
@@ -206,10 +216,9 @@ content {
 }
 
 //アイコン
-.icon{
+#icon{
+  @include smaller;
   color: black;
-  font-size: 12px!important;
-  font-weight: lighter;
   -webkit-text-stroke: 0.7px white;
 }
 

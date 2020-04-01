@@ -13,12 +13,12 @@
         = link_to monthly_path(monthly.id), class: "deco_none num" do
           = converting_to_jpy(current_user.posts.where(date: monthly.start_at..monthly.finish_at).sum(:p_price))
       .table-icon
-        = link_to monthly_path(monthly.id), method: :delete, class: "deco_none icon" do
+        = link_to monthly_path(monthly.id), method: :delete, clsaa: "deco_none", id: "icon" do
           = icon("fas", "trash")
 
 
       -# 編集のformがうまく行かないため、一旦コメントアウト
-      -#   = link_to edit_monthly_path(monthly), class: "deco_none icon" do
+      -#   = link_to edit_monthly_path(monthly), clsaa: "deco_none", id: "icon" do
       -#     = icon("fas", "edit")
 
 

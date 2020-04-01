@@ -4,8 +4,7 @@
       .table-content-only-name
         = link_to tag.name, tag_path(tag.id), class: "deco_none"
       .table-icon
-        = link_to edit_tag_path(tag), class: "deco_none icon" do
+        = link_to edit_tag_path(tag), class: "deco_none", id: "icon" do
           = icon("fas", "edit")
-        = link_to tag_path(tag), method: :delete, class: "deco_none icon" do
+        = link_to tag_path(tag), method: :delete, class: "deco_none", id: "icon" do
           = icon("fas", "trash")
-

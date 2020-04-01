@@ -30,9 +30,9 @@
             = post.memo
         %td.table-icon
           .table-icon
-            = link_to edit_post_path(post), class:"deco_none icon" do
+            = link_to edit_post_path(post), clsaa: "deco_none", id: "icon" do
               = icon("fas", "edit")
-            = link_to post_path(post), method: :delete, class:"deco_none icon" do
+            = link_to post_path(post), method: :delete, clsaa: "deco_none", id: "icon" do
               = icon("fas", "trash")
 
     %tr
@@ -80,9 +80,9 @@
 -#             .table_content
 -#               = post.memo
 -#             .table-icon
--#               = link_to edit_post_path(post), class:"deco_none icon" do
+-#               = link_to edit_post_path(post), clsaa: "deco_none", id: "icon" do
 -#                 = icon("fas", "edit")
--#               = link_to post_path(post), method: :delete, class:"deco_none icon" do
+-#               = link_to post_path(post), method: :delete, clsaa: "deco_none", id: "icon" do
 -#                 = icon("fas", "trash")
 
 -#     %tr
