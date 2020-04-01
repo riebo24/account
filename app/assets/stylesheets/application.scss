@@ -18,19 +18,23 @@
 
 //mixin
 @mixin large {
-  font-size: calc(20px + ((1vw - 6px)*5/6));
+  // font-size: calc(20px + ((1vw - 6px)*5/6));
+  font-size: calc(20px + 2vw);
 }
 
 @mixin medium {  
-  font-size: calc(15px + ((1vw - 6px)*5/6));
+  // font-size: calc(15px + ((1vw - 6px)*5/6));
+  font-size: calc(15px + 2vw);
 }
 
 @mixin small-medium{
-  font-size: calc(13px + ((1vw - 6px)*5/6));
+  // font-size: calc(12px + ((1vw - 6px)*4/6));
+  font-size: calc(12px + 1vw);
 }
 
 @mixin small {
-  font-size: calc(10px + ((1vw - 6px)*2/6));
+  // font-size: calc(10px + ((1vw - 6px)*2/6));
+  font-size: calc(8px + 1vw);
 }
 
 @mixin submit-btn($width: 100px){
@@ -49,7 +53,7 @@
   font-family: 'English', cursive;
   //上記@font-faceで定義   
   font-weight: bold;
-  @include small-medium;
+  // @include small;
    
   // font-family: 'Amatic SC', cursive;                //英数字用フォント Amatic SC
   // font-family: 'M+ Type-1 (general-j) Regular';  //日本語用フォント M+ FONTS
@@ -64,6 +68,10 @@
 
 .font-medium{
   @include medium;
+}
+
+.font-small-medium{
+  @include small-medium;
 }
 
 .font-small{
@@ -110,7 +118,7 @@ content {
 
 
 
-//
+//新規投稿のリンクボタン
 .link_new{
   display: block;
   width: 50vw;
@@ -120,11 +128,6 @@ content {
 }
 
 
-
-//priceや日付等の数字のフォントを変更
-.font13{
-  // font-size: 13px;
-}
 
 //入力フォームの設定
   .text-form{
@@ -195,7 +198,6 @@ content {
 .index_header{
   margin: 10px;
   text-align: center;
-  font-size: 30px;
 }
 
 //右寄せの場合
@@ -290,7 +292,6 @@ table.only-name{
 
 .table-content{
   text-align: center;
-  font-size: 13px;
 }
 
 .table-position{
@@ -344,3 +345,4 @@ head{
   padding-top: 20px;
   //.contentのpadding-topを小さくした分、formのpaddingを補正
 }
+

@@ -6,22 +6,23 @@
       %span#hamberger.bottom
     //#hambergerは、JS用
   .menu
-    .menu__list.font-medium
-      - if user_signed_in?
-        .user_name
+    .menu__list.font-small
+      
+      .user_name
+        .font-medium
           Hello！
+        - if user_signed_in?
           = link_to "#{current_user.name}さん", user_path(current_user.id), class: "deco_none"
           %p
-            = link_to "TOP", root_path, class: "deco_none"
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "deco_none"
-      - else
-        .user_name
-          Hello! ゲストさん
-        .log_in
-          %p
-            =link_to "ログイン", new_user_session_path, class: "deco_none"
-          %p
-            = link_to "ユーザー登録", new_user_registration_path, class: "deco_none"
+          = link_to "TOP", root_path, class: "deco_none"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "deco_none"
+        - else
+          ゲストさん
+          .log_in
+            %p
+              =link_to "ログイン", new_user_session_path, class: "deco_none"
+            %p
+              = link_to "ユーザー登録", new_user_registration_path, class: "deco_none"
             
 
       -# = link_to "予算の登録", new_budget_path

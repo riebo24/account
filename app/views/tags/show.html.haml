@@ -7,15 +7,15 @@
 .table
   %table
     %tr
-      %th.normal-width
+      %th.font-small-medium.normal-width
         date
-      %th.normal-width
+      %th.font-small-medium.normal-width
         category
-      %th.normal-width
+      %th.font-small-medium.normal-width
         price
-      %th.remaining
+      %th.font-small-medium.remaining
         memo
-      %th.table-icon
+      %th.font-small-medium.table-icon
           
     - @posts.each do |post|
       %tr.hover
@@ -39,9 +39,9 @@
       %th{colspan: "2"}
         合計金額
         
-      %th
+      %th.font-small-medium
         = converting_to_jpy(@sum)
-      %th{colspan: "2"}
+      %th.font-small-medium{colspan: "2"}
 
 
 
@@ -58,13 +58,13 @@
 -# .table
 -#   %table
 -#     %tr
--#       %th
+-#       %th.font-small-medium
 -#         date
--#       %th
+-#       %th.font-small-medium
 -#         category
--#       %th
+-#       %th.font-small-medium
 -#         price
--#       %th
+-#       %th.font-small-medium
 -#         memo
           
 -#     - @posts.each do |post|
@@ -86,11 +86,11 @@
 -#                 = icon("fas", "trash")
 
 -#     %tr
--#       %th{colspan: "2"}
+-#       %th.font-small-medium{colspan: "2"}
 -#         合計金額
         
--#       %th
+-#       %th.font-small-medium
 -#         = converting_to_jpy(@sum)
--#       %th
+-#       %th.font-small-medium
 
     
